@@ -1,10 +1,13 @@
-import React from 'react'
+import LoginForm from "@/components/auth/login-form"
+import React from "react"
 
 const Login = () => {
   return (
-    <div>
-      Login
-    </div>
+    <main>
+      <div className="max-w-lg mx-auto">
+        <LoginForm />
+      </div>
+    </main>
   )
 }
 
