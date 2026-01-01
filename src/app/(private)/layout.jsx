@@ -1,3 +1,4 @@
+import Container from "@/components/general/container"
 import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
 
@@ -8,5 +9,5 @@ export default async function PrivateLayout({ children }) {
   if (!token) {
     redirect("/")
   }
-  return children
+  return (<Container>{children}</Container>)
 }

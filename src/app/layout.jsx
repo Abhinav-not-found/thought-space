@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
           disableTransitionOnChange
         >
           <Toaster />
-          <Container>{children}</Container>
+          {children}
         </ThemeProvider>
       </body>
     </html>
