@@ -3,27 +3,56 @@ import { Field, FieldGroup, FieldLabel, FieldSet } from "@/components/ui/field"
 import { Input } from "../ui/input"
 import { Button } from "../ui/button"
 import Link from "next/link"
+import { useState } from "react"
+import { handleLogin } from "@/helpers/auth.client.helper"
 
 const LoginForm = () => {
+  const [form, setForm] = useState({ name: "", email: "", password: "" })
+  const [loading, setLoading] = useState(false)
+  const handleChange = (e) => {
+    const { id, value } = e.target
+    setForm((prev) => ({ ...prev, [id]: value }))
+  }
+
+  const fields = [
+    {
+      id: "email",
+      label: "Email",
+      placeholder: "johnDoe@gmail.com",
+      type: "email",
+    },
+    {
+      id: "password",
+      label: "Password",
+      placeholder: "● ● ● ● ●",
+      type: "password",
+    },
+  ]
   return (
-    <form>
+    <form onSubmit={(e) => handleLogin(e, form, toast, { setLoading })}>
       <FieldSet>
         <FieldGroup>
-          <Field>
-            <FieldLabel htmlFor='email'>Email</FieldLabel>
-            <Input
-              id='email'
-              autoComplete='off'
-              placeholder='johnDoe@gmail.com'
-            />
-          </Field>
-          <Field>
-            <FieldLabel htmlFor='password'>Password</FieldLabel>
-            <Input id='password' autoComplete='off' placeholder='● ● ● ● ●' />
-          </Field>
+
+          {fields.map(({ id, label, placeholder, type }) => (
+            <Field key={id}>
+              <FieldLabel htmlFor={id}>{label}</FieldLabel>
+              <Input
+                id={id}
+                type={type}
+                value={form[id]}
+                onChange={handleChange}
+                placeholder={placeholder}
+                autoComplete='off'
+              />
+            </Field>
+          ))}
+
           <Field orientation='horizontal'>
-            <Button>Login</Button>
+            <Button type='submit' disabled={loading}>
+              {loading ? "Logging..." : "Login"}
+            </Button>
           </Field>
+
           <p className='text-muted-foreground text-center'>
             Don't have an account?{" "}
             <Link
@@ -34,6 +63,7 @@ const LoginForm = () => {
             </Link>{" "}
             here
           </p>
+          
         </FieldGroup>
       </FieldSet>
     </form>

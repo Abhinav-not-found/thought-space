@@ -4,12 +4,14 @@ import { Input } from "../ui/input"
 import { Button } from "../ui/button"
 import Link from "next/link"
 import { useState } from "react"
-import { handleRegister } from "@/helpers/auth.helper"
+import { handleRegister } from "@/helpers/auth.client.helper"
 import { toast } from "sonner"
+import { useRouter } from "next/navigation"
 
 const RegisterForm = () => {
   const [form, setForm] = useState({ name: "", email: "", password: "" })
   const [loading, setLoading] = useState(false)
+  const router = useRouter()
 
   const handleChange = (e) => {
     const { id, value } = e.target
@@ -27,13 +29,13 @@ const RegisterForm = () => {
     {
       id: "password",
       label: "Password",
-      placeholder: "● ● ● ● ●",
+      placeholder: "••••••",
       type: "password",
     },
   ]
 
   return (
-    <form onSubmit={(e) => handleRegister(e, form, toast, { setLoading })}>
+    <form onSubmit={(e) => handleRegister(e, form, toast,router, { setLoading })}>
       <FieldSet>
         <FieldGroup>
           {fields.map(({ id, label, placeholder, type }) => (
