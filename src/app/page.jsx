@@ -1,8 +1,5 @@
+import AuthRedirect from "@/components/route/authRedirect"
 
-export default function Home() {
-  return (
-    <main>
-      Landing Page
-    </main>
-  );
+export default async function Home() {
+  return <AuthRedirect>Landing Page</AuthRedirect>
 }
