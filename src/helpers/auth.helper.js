@@ -46,6 +46,7 @@ export const handleLogin = async (e, form, toast, router, { setLoading }) => {
     if (res.ok) {
       toast.success(data.message)
       router.push('/home')
+      router.refresh()
     }
   } catch (error) {
     console.log(error)
@@ -54,7 +55,7 @@ export const handleLogin = async (e, form, toast, router, { setLoading }) => {
   }
 }
 
-export const handleLogout = async (toast,router,{ setLoading }) => {
+export const handleLogout = async (toast, router, { setLoading }) => {
   setLoading(true)
   try {
     const res = await fetch("/api/logout", {
@@ -65,6 +66,7 @@ export const handleLogout = async (toast,router,{ setLoading }) => {
     if (res.ok) {
       toast.success(data.message)
       router.push('/')
+      router.refresh()
     }
   } catch (error) {
     console.log(error)

@@ -54,7 +54,7 @@ const LoginForm = () => {
 
           <Field orientation='horizontal'>
             <Button type='submit' disabled={loading}>
-              {loading ? <Spinner/> : "Login"}
+              {loading ? <Spinner /> : "Login"}
             </Button>
           </Field>
 
