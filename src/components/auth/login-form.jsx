@@ -47,7 +47,6 @@ const LoginForm = () => {
                 value={form[id]}
                 onChange={handleChange}
                 placeholder={placeholder}
-                autoComplete='off'
               />
             </Field>
           ))}

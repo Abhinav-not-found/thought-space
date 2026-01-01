@@ -10,9 +10,10 @@ const Navbar = async () => {
   const token = cookieStore.get("token")
 
   return (
-    <header className='max-w-5xl mx-auto flex justify-between'>
+    <header className=' h-14 max-w-5xl mx-auto flex items-center justify-between'>
       <Link href={token ? "/home" : "/"}>Logo</Link>
       <div className='flex items-center gap-2'>
+        <ModeToggle />
         {token ? (
           <LogoutBtn />
         ) : (
@@ -20,7 +21,6 @@ const Navbar = async () => {
             <Button>Login</Button>
           </Link>
         )}
-        <ModeToggle />
       </div>
     </header>
   )

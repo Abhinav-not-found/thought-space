@@ -48,7 +48,6 @@ const RegisterForm = () => {
                 value={form[id]}
                 onChange={handleChange}
                 placeholder={placeholder}
-                autoComplete='off'
               />
             </Field>
           ))}
