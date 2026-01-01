@@ -5,10 +5,15 @@ import { Button } from "../ui/button"
 import Link from "next/link"
 import { useState } from "react"
 import { handleLogin } from "@/helpers/auth.client.helper"
+import { useRouter } from "next/navigation"
+import { toast } from "sonner"
+import { Spinner } from "../ui/spinner"
 
 const LoginForm = () => {
   const [form, setForm] = useState({ name: "", email: "", password: "" })
   const [loading, setLoading] = useState(false)
+  const router = useRouter()
+
   const handleChange = (e) => {
     const { id, value } = e.target
     setForm((prev) => ({ ...prev, [id]: value }))
@@ -24,15 +29,15 @@ const LoginForm = () => {
     {
       id: "password",
       label: "Password",
-      placeholder: "● ● ● ● ●",
+      placeholder: "••••••",
       type: "password",
     },
   ]
+
   return (
-    <form onSubmit={(e) => handleLogin(e, form, toast, { setLoading })}>
+    <form onSubmit={(e) => handleLogin(e, form, toast, router, { setLoading })}>
       <FieldSet>
         <FieldGroup>
-
           {fields.map(({ id, label, placeholder, type }) => (
             <Field key={id}>
               <FieldLabel htmlFor={id}>{label}</FieldLabel>
@@ -49,7 +54,7 @@ const LoginForm = () => {
 
           <Field orientation='horizontal'>
             <Button type='submit' disabled={loading}>
-              {loading ? "Logging..." : "Login"}
+              {loading ? <Spinner/> : "Login"}
             </Button>
           </Field>
 
@@ -63,7 +68,6 @@ const LoginForm = () => {
             </Link>{" "}
             here
           </p>
-          
         </FieldGroup>
       </FieldSet>
     </form>

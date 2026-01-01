@@ -27,7 +27,7 @@ export const handleRegister = async (e, form, toast, router, { setLoading }) => 
   }
 }
 
-export const handleLogin = async (e, form, toast, { setLoading }) => {
+export const handleLogin = async (e, form, toast, router, { setLoading }) => {
   e.preventDefault()
   setLoading(true)
 
@@ -44,7 +44,9 @@ export const handleLogin = async (e, form, toast, { setLoading }) => {
     })
     const data = await res.json()
     if (res.ok) {
+      console.log(data)
       toast.success(data.message)
+      router.push('/home')
     }
   } catch (error) {
     console.log(error)

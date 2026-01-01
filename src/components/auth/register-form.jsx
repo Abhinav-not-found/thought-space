@@ -7,6 +7,7 @@ import { useState } from "react"
 import { handleRegister } from "@/helpers/auth.client.helper"
 import { toast } from "sonner"
 import { useRouter } from "next/navigation"
+import { Spinner } from "../ui/spinner"
 
 const RegisterForm = () => {
   const [form, setForm] = useState({ name: "", email: "", password: "" })
@@ -54,7 +55,7 @@ const RegisterForm = () => {
 
           <Field orientation='horizontal'>
             <Button type='submit' disabled={loading}>
-              {loading ? "Registering..." : "Register"}
+              {loading ? <Spinner/> : "Register"}
             </Button>
           </Field>
 
