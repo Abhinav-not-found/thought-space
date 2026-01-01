@@ -44,9 +44,27 @@ export const handleLogin = async (e, form, toast, router, { setLoading }) => {
     })
     const data = await res.json()
     if (res.ok) {
-      console.log(data)
       toast.success(data.message)
       router.push('/home')
+    }
+  } catch (error) {
+    console.log(error)
+  } finally {
+    setLoading(false)
+  }
+}
+
+export const handleLogout = async (toast,router,{ setLoading }) => {
+  setLoading(true)
+  try {
+    const res = await fetch("/api/logout", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+    })
+    const data = await res.json()
+    if (res.ok) {
+      toast.success(data.message)
+      router.push('/')
     }
   } catch (error) {
     console.log(error)
