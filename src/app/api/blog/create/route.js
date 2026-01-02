@@ -16,8 +16,8 @@ export async function POST(req) {
         { status: 400 }
       )
     }
-
-    const token = cookies().get("token")?.value
+    const cookieStore = await cookies()
+    const token = cookieStore.get("token")?.value
     if (!token) {
       return NextResponse.json(
         { message: "Unauthorized" },
@@ -65,7 +65,7 @@ export async function POST(req) {
     )
   } catch (error) {
     console.error(error)
-    if (err.code === 11000) {
+    if (error.code === 11000) {
       return NextResponse.json(
         { message: "Slug already exists, retry" },
         { status: 409 }
