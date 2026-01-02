@@ -12,16 +12,17 @@ const blogSchema = new mongoose.Schema(
       required: true,
       unique: true,
       lowercase: true,
-      trim: true
+      trim: true,
+      index: true
     },
     authorId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref:'User',
-      required:true
+      ref: 'User',
+      required: true
     },
     content: {
       type: String,
-      required:true
+      required: true
     }
   },
   { timestamps: true }
