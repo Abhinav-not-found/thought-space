@@ -5,6 +5,7 @@ import { cookies } from "next/headers"
 import LogoutBtn from "../btn/logout-btn"
 import { Button } from "../ui/button"
 import WriteBtn from "../btn/write-btn"
+import Logo from "./logo"
 
 const Navbar = async () => {
   const cookieStore = await cookies()
@@ -12,13 +13,13 @@ const Navbar = async () => {
 
   return (
     <header className=' h-14 max-w-5xl mx-auto flex items-center justify-between'>
-      <Link href={token ? "/home" : "/"}>Logo</Link>
+      <Logo token={token} />
       <div className='flex items-center gap-2'>
         <ModeToggle />
         {token ? (
           <>
-          <WriteBtn/>
-          <LogoutBtn />
+            <WriteBtn />
+            <LogoutBtn />
           </>
         ) : (
           <Link href={"/login"}>

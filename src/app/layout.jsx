@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google"
+import { Cormorant_Garamond, Geist } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/ui/theme-provider"
 import { Toaster } from "sonner"
@@ -8,9 +8,10 @@ const geistSans = Geist({
   subsets: ["latin"],
 })
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const cormorant_Garamond = Cormorant_Garamond({
+  variable: "--font-cormorant-garamond",
   subsets: ["latin"],
+    weight: ["300", "400", "500", "600", "700"],
 })
 
 export const metadata = {
@@ -22,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en' suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${cormorant_Garamond.variable} antialiased`}
       >
         <ThemeProvider
           attribute='class'
