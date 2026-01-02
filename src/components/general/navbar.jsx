@@ -4,6 +4,7 @@ import Link from "next/link"
 import { cookies } from "next/headers"
 import LogoutBtn from "../btn/logout-btn"
 import { Button } from "../ui/button"
+import WriteBtn from "../btn/write-btn"
 
 const Navbar = async () => {
   const cookieStore = await cookies()
@@ -15,7 +16,10 @@ const Navbar = async () => {
       <div className='flex items-center gap-2'>
         <ModeToggle />
         {token ? (
+          <>
+          <WriteBtn/>
           <LogoutBtn />
+          </>
         ) : (
           <Link href={"/login"}>
             <Button>Login</Button>
