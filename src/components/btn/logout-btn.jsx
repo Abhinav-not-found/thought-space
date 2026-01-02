@@ -15,7 +15,7 @@ const LogoutBtn = () => {
     <Button
       variant='ghost'
       onClick={() => handleLogout(toast, router, { setLoading })}
-      className={'w-full'}
+      className={"w-full flex justify-start"}
     >
       {loading ? (
         <Spinner />

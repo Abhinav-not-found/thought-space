@@ -21,7 +21,7 @@ const CustomAvatar = () => {
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <div>
+        <div className="text-left">
           <ProfileBtn />
           <LogoutBtn />
         </div>

@@ -6,7 +6,7 @@ import Link from "next/link"
 const ProfileBtn = () => {
   return (
     <Link href={'/profile/name'}>
-      <Button variant='ghost' className={"w-full"}>
+      <Button variant='ghost' className={"w-full flex justify-start"}>
         <User />
         <p>Profile</p>
       </Button>
