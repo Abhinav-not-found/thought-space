@@ -21,22 +21,28 @@ const CreateBlogForm = () => {
   return (
     <form
       onSubmit={(e) => handleCreateBlog(e, form, router, { setLoading, toast })}
+      className='space-y-4'
     >
-      <Input
+      <input
         id='title'
         value={form.title}
         onChange={handleChange}
         placeholder='Title'
+        className='w-full text-5xl font-semibold placeholder:text-neutral-300/80 dark:placeholder:text-neutral-600 outline-none'
       />
-      <Textarea
+      <textarea
         id='content'
         value={form.content}
         onChange={handleChange}
-        placeholder='Blog'
+        placeholder="Write, '/' for command"
+        className='w-full h-80 outline-none'
       />
-      <Button type='submit' disabled={loading}>
-        {loading ? <Spinner /> : "Post"}
-      </Button>
+      <div className='flex gap-2'>
+        <Button variant='outline'>Save as draft</Button>
+        <Button type='submit' disabled={loading}>
+          {loading ? <Spinner /> : "Post"}
+        </Button>
+      </div>
     </form>
   )
 }
