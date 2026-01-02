@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import LogoutBtn from "../btn/logout-btn"
 import ProfileBtn from "../btn/profile-btn"
+import SettingsBtn from "../btn/settings-btn"
 
 const CustomAvatar = () => {
   return (
@@ -21,8 +22,9 @@ const CustomAvatar = () => {
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <div className="text-left">
+        <div className='text-left'>
           <ProfileBtn />
+          <SettingsBtn />
           <LogoutBtn />
         </div>
       </DropdownMenuContent>

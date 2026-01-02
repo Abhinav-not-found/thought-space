@@ -1,4 +1,4 @@
-import Card from "@/components/general/card"
+import Card from "@/components/auth/blog/card"
 
 const Home = () => {
   return (

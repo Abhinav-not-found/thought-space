@@ -11,7 +11,7 @@ const oswald = Oswald({
 
 const Logo = ({ token }) => {
   return (
-    <Link href={token ? "/home" : "/"} className='flex'>
+    <Link href={token ? "/home" : "/"} className='flex select-none'>
       <PenTool className='rotate-45 translate-y-1.5' />
       <div className='flex gap-1'>
         <p className={`${oswald.className} text-2xl `}>Thought </p>
