@@ -9,6 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import LogoutBtn from "../btn/logout-btn"
+import ProfileBtn from "../btn/profile-btn"
 
 const CustomAvatar = () => {
   return (
@@ -21,7 +22,8 @@ const CustomAvatar = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <div>
-          <LogoutBtn/>
+          <ProfileBtn />
+          <LogoutBtn />
         </div>
       </DropdownMenuContent>
     </DropdownMenu>

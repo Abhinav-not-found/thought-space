@@ -3,10 +3,11 @@ import Card from "@/components/general/card"
 const Home = () => {
   return (
     <main className='flex'>
-      <div className='w-2/3 h-screen '>
+      Home page
+      {/* <div className='w-2/3 h-screen '>
         <Card/>
       </div>
-      <div className='w-1/3 h-screen '></div>
+      <div className='w-1/3 h-screen '></div> */}
     </main>
   )
 }
