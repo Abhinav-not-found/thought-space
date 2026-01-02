@@ -15,6 +15,7 @@ const LogoutBtn = () => {
     <Button
       variant='ghost'
       onClick={() => handleLogout(toast, router, { setLoading })}
+      className={'w-full'}
     >
       {loading ? (
         <Spinner />

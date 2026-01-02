@@ -6,6 +6,7 @@ import LogoutBtn from "../btn/logout-btn"
 import { Button } from "../ui/button"
 import WriteBtn from "../btn/write-btn"
 import Logo from "./logo"
+import CustomAvatar from "./custom-avatar"
 
 const Navbar = async () => {
   const cookieStore = await cookies()
@@ -19,7 +20,7 @@ const Navbar = async () => {
         {token ? (
           <>
             <WriteBtn />
-            <LogoutBtn />
+            <CustomAvatar />
           </>
         ) : (
           <Link href={"/login"}>

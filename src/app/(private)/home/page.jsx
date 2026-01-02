@@ -1,8 +1,13 @@
+import Card from "@/components/general/card"
+
 const Home = () => {
   return (
-    <div>
-      <p className='font-cormorant-garamond'>test</p>
-    </div>
+    <main className='flex'>
+      <div className='w-2/3 h-screen '>
+        <Card/>
+      </div>
+      <div className='w-1/3 h-screen '></div>
+    </main>
   )
 }
 
