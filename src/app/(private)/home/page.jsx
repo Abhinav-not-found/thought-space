@@ -1,4 +1,4 @@
-import BlogCard from "@/components/blog/card"
+import BlogCard from "@/components/blog/blog-card"
 
 const Home = () => {
   return (
@@ -7,7 +7,7 @@ const Home = () => {
         <BlogCard />
         <BlogCard />
       </div>
-      {/* <div className="w-full h-screen bg-red-50"></div> */}
+      {/* <aside className="w-full h-screen bg-red-50"></aside> */}
     </main>
   )
 }
