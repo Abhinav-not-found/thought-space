@@ -34,7 +34,7 @@ const CreateBlogForm = () => {
         id='content'
         value={form.content}
         onChange={handleChange}
-        placeholder="Write, '/' for command"
+        placeholder="Blog"
         className='w-full h-80 outline-none'
       />
       <div className='flex gap-2'>

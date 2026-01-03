@@ -1,13 +1,13 @@
-import Card from "@/components/blog/card"
+import BlogCard from "@/components/blog/card"
 
 const Home = () => {
   return (
-    <main className='flex'>
-      Home page
-      {/* <div className='w-2/3 h-screen '>
-        <Card/>
+    <main className='flex gap-4'>
+      <div className='flex gap-4'>
+        <BlogCard />
+        <BlogCard />
       </div>
-      <div className='w-1/3 h-screen '></div> */}
+      {/* <div className="w-full h-screen bg-red-50"></div> */}
     </main>
   )
 }
