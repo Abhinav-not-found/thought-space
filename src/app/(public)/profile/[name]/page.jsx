@@ -2,7 +2,7 @@ import React from "react"
 
 const Profile = () => {
   return (
-    <main className='flex gap-4'>
+    <main className='flex gap-6'>
       <div className='w-2/3 h-screen'>
         <div className='flex justify-between'>
           <h1 className='text-4xl font-semibold'>Author Name</h1>
@@ -12,7 +12,7 @@ const Profile = () => {
           <p>all the blogs created by this author</p>
         </div>
       </div>
-      <aside className='w-1/3 h-screen border-l p-6'>
+      <aside className='w-1/3 h-fit border rounded-md p-4'>
         <div className='size-20 bg-red-50 rounded-full'></div>
         <h2>Name</h2>
         <p>Bio</p>
