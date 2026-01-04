@@ -12,7 +12,7 @@ const BlogCard = async ({ data }) => {
       <div className='w-full h-2/3 border-b'></div>
       <div className='w-full h-1/2 p-2 flex flex-col gap-6'>
         <Link
-          href={"/blog/name"}
+          href={`/blog/${data?.slug}`}
           className='text-2xl hover:underline font-medium first-letter:uppercase'
         >
           {data?.title || "Title"}
@@ -22,9 +22,11 @@ const BlogCard = async ({ data }) => {
             href={"/profile/name"}
             className='text-muted-foreground text-sm hover:underline cursor-pointer first-letter:uppercase'
           >
-            {author?.name}
+            {author?.name || "author"}
           </Link>
-          <p className='text-muted-foreground text-sm'>{formattedDate}</p>
+          <p className='text-muted-foreground text-sm'>
+            {formattedDate || "Date"}
+          </p>
         </div>
       </div>
     </article>
