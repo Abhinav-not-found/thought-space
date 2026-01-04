@@ -22,7 +22,7 @@ const BlogCard = async ({ data }) => {
             href={"/profile/name"}
             className='text-muted-foreground text-sm hover:underline cursor-pointer first-letter:uppercase'
           >
-            {author?.name || "author"}
+            {author?.username || "author"}
           </Link>
           <p className='text-muted-foreground text-sm'>
             {formattedDate || "Date"}

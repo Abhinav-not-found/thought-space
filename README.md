@@ -16,3 +16,7 @@ tuesday wednesday
 - frontend Ui
 - seo
 - fast performance
+
+
+# future
+- edit/ custom username

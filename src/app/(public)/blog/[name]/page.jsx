@@ -18,7 +18,7 @@ const BlogDetail = async ({ params }) => {
         </h1>
         <div className='mt-2'>
           <p className='text-muted-foreground first-letter:uppercase'>
-            {data?.authorId.name} {formattedDate}
+            {data?.authorId.username} {formattedDate}
           </p>
         </div>
         <div className='mt-8'>
