@@ -1,5 +1,9 @@
-export const handleCreateBlog = async (e, form, router, { setLoading, toast }) => {
-
+export const handleCreateBlog = async (
+  e,
+  form,
+  router,
+  { setLoading, toast }
+) => {
   e.preventDefault()
   setLoading(true)
 
@@ -16,10 +20,10 @@ export const handleCreateBlog = async (e, form, router, { setLoading, toast }) =
       router.push("/home")
       router.refresh()
     }
-    
   } catch (error) {
     console.log(error)
   } finally {
     setLoading(false)
   }
 }
+

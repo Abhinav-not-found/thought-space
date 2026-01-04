@@ -11,6 +11,7 @@ import {
 import LogoutBtn from "../btn/logout-btn"
 import ProfileBtn from "../btn/profile-btn"
 import SettingsBtn from "../btn/settings-btn"
+import MyBlogBtn from "../btn/my-blog-btn"
 
 const CustomAvatar = () => {
   return (
@@ -24,6 +25,7 @@ const CustomAvatar = () => {
       <DropdownMenuContent>
         <div className='text-left'>
           <ProfileBtn />
+          <MyBlogBtn/>
           <SettingsBtn />
           <LogoutBtn />
         </div>

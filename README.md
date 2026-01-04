@@ -6,10 +6,6 @@ change logo font
 - handle error in login-form : toast error messages
 
 
-sunday
-- blog detail page
-- my blog
-
 monday
 
 - settings

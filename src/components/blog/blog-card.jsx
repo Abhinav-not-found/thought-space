@@ -1,26 +1,30 @@
+import { getAuthorInfo } from "@/helpers/blog-server/get-author-info"
 import Link from "next/link"
 import React from "react"
 // in case of no image, add a skeleton with micro interaction
 
-const BlogCard = () => {
+const BlogCard = async ({ data }) => {
+  const author = await getAuthorInfo(data?.authorId.toString())
+  const formattedDate = new Date(data?.createdAt).toDateString()
+
   return (
-    <article className='min-w-88 h-72 rounded-xl border'>
+    <article className='min-w-88 max-w-88 h-72 rounded-xl border'>
       <div className='w-full h-2/3 border-b'></div>
       <div className='w-full h-1/2 p-2 flex flex-col gap-6'>
         <Link
           href={"/blog/name"}
-          className='text-2xl hover:underline font-medium'
+          className='text-2xl hover:underline font-medium first-letter:uppercase'
         >
-          Title
+          {data?.title || "Title"}
         </Link>
         <div className='flex justify-between'>
           <Link
             href={"/profile/name"}
-            className='text-muted-foreground text-sm hover:underline cursor-pointer'
+            className='text-muted-foreground text-sm hover:underline cursor-pointer first-letter:uppercase'
           >
-            Author
+            {author?.name}
           </Link>
-          <p className='text-muted-foreground text-sm'>Jan 12, 2024</p>
+          <p className='text-muted-foreground text-sm'>{formattedDate}</p>
         </div>
       </div>
     </article>
