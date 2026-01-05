@@ -1,3 +1,5 @@
+import BlogCard from "@/components/blog/blog-card"
+import { getUserBlogs } from "@/helpers/blog-server/get-user-blogs"
 import { getUserInfo } from "@/helpers/user.helper"
 import React from "react"
 
@@ -5,6 +7,8 @@ const Profile = async ({ params }) => {
   const { name: username } = await params
 
   const data = await getUserInfo(username)
+
+  const blogs = await getUserBlogs(data._id)
 
   return (
     <main className='flex gap-6'>
@@ -16,7 +20,9 @@ const Profile = async ({ params }) => {
           <button>...</button>
         </div>
         <div className='mt-5'>
-          <p>all the blogs created by this author</p>
+          {blogs.map((i, index) => {
+            return <BlogCard key={index} data={i} />
+          })}
         </div>
       </div>
       <aside className='w-1/3 h-fit border rounded-md p-4'>

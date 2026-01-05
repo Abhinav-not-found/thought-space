@@ -1,4 +1,6 @@
-change logo font
+make helper folder better organized
+same for lib folder
+
 
 # Fixes
 
