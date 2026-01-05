@@ -6,7 +6,7 @@ import { Button } from "../ui/button"
 const Hero = () => {
   return (
     <section className='w-full h-[80vh]'>
-      <h1 className='text-6xl text-center pt-32 tracking-tight'>
+      <h1 className='text-6xl text-center pt-32 tracking-tight leading-16'>
         <span className='font-semibold'>Thought Space </span>
         — Where <br />
         Ideas Become Blogs

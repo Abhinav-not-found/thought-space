@@ -1,12 +1,13 @@
+import Heading, { Bold } from "../general/heading"
 import Card from "../landing/why-card"
 import { BookOpen, Brain, Pencil } from "lucide-react"
 
 const Why = () => {
   return (
     <section className='w-full h-[60vh] mt-24'>
-      <h2 className='text-6xl text-center tracking-tighter'>
-        <span className='font-semibold'>Why</span> Thought Space?
-      </h2>
+      <Heading>
+        <Bold>Why</Bold> Thought Space?
+      </Heading>
 
       <div className='flex justify-center gap-14 mt-14'>
         <Card

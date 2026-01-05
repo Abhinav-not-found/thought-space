@@ -4,10 +4,9 @@ import Footer from "@/components/section/footer"
 import Hero from "@/components/section/hero"
 import Trending from "@/components/section/trending"
 import Why from "@/components/section/why"
+import Write from "@/components/section/write"
 
 // change(UI) blog to thoughts ex: my blogs - my thoughts, featured thoughts
-
-// a section where you showcase the writing feature with screen shot/video of writing blog
 
 export default async function LandingPage() {
   return (
@@ -15,6 +14,7 @@ export default async function LandingPage() {
       <Container>
         <Hero />
         <Why />
+        <Write />
         <Trending />
         <Footer />
       </Container>
