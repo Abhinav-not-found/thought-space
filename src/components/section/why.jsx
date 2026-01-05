@@ -1,10 +1,9 @@
-import React from "react"
 import Card from "../landing/why-card"
-import { BookOpen, BookOpenCheck, Brain, Bubbles, Pencil } from "lucide-react"
+import { BookOpen, Brain, Pencil } from "lucide-react"
 
 const Why = () => {
   return (
-    <section className='w-full h-screen mt-24'>
+    <section className='w-full h-[60vh] mt-24'>
       <h2 className='text-6xl text-center tracking-tighter'>
         <span className='font-semibold'>Why</span> Thought Space?
       </h2>
