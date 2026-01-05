@@ -1,16 +1,21 @@
 import React from "react"
-import { Button } from "../ui/button"
+import HeroBtn from "../btn/hero-btn"
 
-// custom button ui(cta)
 
 const Hero = () => {
   return (
     <section className='w-full h-[80vh]'>
-      <h1 className='text-6xl text-center pt-32 tracking-tight leading-16'>
+
+      <p className='text-center mt-20 mb-7 bg-neutral-100 w-fit mx-auto p-1 rounded-md px-3 text-sm font-medium'>
+        Thought = Blog
+      </p>
+      
+      <h1 className='text-6xl text-center  tracking-tight leading-16'>
         <span className='font-semibold'>Thought Space </span>
         — Where <br />
         Ideas Become Blogs
       </h1>
+
       <div className='flex justify-center mt-14 '>
         <p className='text-center text-xl text-muted-foreground w-2xl leading-8'>
           A clean, distraction-free blogging platform built for sharing
@@ -19,7 +24,7 @@ const Hero = () => {
       </div>
 
       <div className='mt-14 flex justify-center'>
-        <Button>Start Writing</Button>
+        <HeroBtn>Start Writing</HeroBtn>
       </div>
     </section>
   )
