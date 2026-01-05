@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section className='w-full h-[80vh]'>
 
-      <p className='text-center mt-20 mb-7 bg-neutral-100 w-fit mx-auto p-1 rounded-md px-3 text-sm font-medium'>
+      <p className='text-center mt-20 mb-7 bg-neutral-100 dark:bg-neutral-800 w-fit mx-auto p-1 rounded-md px-3 text-sm font-medium'>
         Thought = Blog
       </p>
       
