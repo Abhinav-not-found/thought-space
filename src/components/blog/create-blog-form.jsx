@@ -1,8 +1,7 @@
 "use client"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+
 import { Spinner } from "@/components/ui/spinner"
 import { useRouter } from "next/navigation"
 import { toast } from "sonner"
@@ -35,7 +34,7 @@ const CreateBlogForm = () => {
         value={form.content}
         onChange={handleChange}
         placeholder="Blog"
-        className='w-full h-80 outline-none'
+        className='w-full h-80 outline-none mt-4'
       />
       <div className='flex gap-2'>
         <Button variant='outline'>Save as draft</Button>

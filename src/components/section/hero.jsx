@@ -24,7 +24,7 @@ const Hero = () => {
       </div>
 
       <div className='mt-14 flex justify-center'>
-        <HeroBtn>Start Writing</HeroBtn>
+        <HeroBtn href={'/login'}>Start Writing</HeroBtn>
       </div>
     </section>
   )

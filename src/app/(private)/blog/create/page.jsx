@@ -6,7 +6,7 @@ const CreateBlog = async () => {
 
 
   return (
-    <main>
+    <main className="pt-5">
       <CreateBlogForm />
     </main>
   )

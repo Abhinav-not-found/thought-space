@@ -9,21 +9,23 @@ import LogoutBtn from "../btn/logout-btn"
 import ProfileBtn from "../btn/profile-btn"
 import SettingsBtn from "../btn/settings-btn"
 import MyThoughtBtn from "../btn/my-thought-btn"
+import { getUserInfo } from "@/helpers/user.helper"
 
-const CustomAvatar = () => {
+const CustomAvatar = async () => {
+  const data = await getUserInfo()
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
         <Avatar>
-          <AvatarFallback>test</AvatarFallback>
-          <AvatarImage src='https://github.com/shadcn.png' />
+          <AvatarFallback>{data.name[0].toUpperCase()}</AvatarFallback>
+          {/* <AvatarImage src='https://github.com/shadcn.png' /> */}
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <div className='text-left'>
           <ProfileBtn />
-          <MyThoughtBtn/>
-          <SettingsBtn />
+          {/* <MyThoughtBtn /> */}
+          {/* <SettingsBtn /> */}
           <LogoutBtn />
         </div>
       </DropdownMenuContent>
