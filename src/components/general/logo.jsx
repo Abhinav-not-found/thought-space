@@ -1,11 +1,17 @@
 import Link from "next/link"
-import React from "react"
-import { PenTool } from "lucide-react"
+import { Bytesized } from "next/font/google"
+
+const press_Start_2P = Bytesized({
+  subsets: ["latin"],
+  weight: ["400"],
+})
 
 const Logo = ({ token }) => {
   return (
     <Link href={token ? "/home" : "/"} className='flex select-none'>
-      <PenTool className='rotate-45 translate-y-1.5 size-7' />
+      <p className={`font-extrabold text-4xl ${press_Start_2P.className}`}>
+        TS
+      </p>
     </Link>
   )
 }
