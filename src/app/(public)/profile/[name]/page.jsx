@@ -1,4 +1,3 @@
-import BlogCard from "@/components/blog/blog-card"
 import BlogCard2 from "@/components/blog/blog-card2"
 import { getUserBlogs } from "@/helpers/blog-server/get-user-blogs"
 import { getUserInfo } from "@/helpers/user.helper"
