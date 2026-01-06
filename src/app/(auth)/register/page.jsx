@@ -1,13 +1,22 @@
-import RegisterForm from '@/components/auth/register-form'
-import React from 'react'
+import RegisterForm from "@/components/auth/register-form"
+import Heading, { Bold } from "@/components/general/heading"
+import React from "react"
 
 const Register = () => {
   return (
-    <div>
-      <div className="max-w-lg mx-auto">
-        <RegisterForm/>
+    <main className='w-full'>
+      <div className='flex flex-col justify-center items-center mt-28 mb-10 '>
+        <Heading>
+          <Bold>Create</Bold> Account
+        </Heading>
+        <p className='text-muted-foreground text-lg mt-3'>
+          Join us to start sharing your thoughts
+        </p>
       </div>
-    </div>
+      <div className='max-w-lg mx-auto'>
+        <RegisterForm />
+      </div>
+    </main>
   )
 }
 

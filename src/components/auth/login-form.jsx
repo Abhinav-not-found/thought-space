@@ -52,12 +52,16 @@ const LoginForm = () => {
           ))}
 
           <Field orientation='horizontal'>
-            <Button type='submit' disabled={loading}>
+            <Button
+              type='submit'
+              disabled={loading}
+              className={"w-full py-6 text-lg"}
+            >
               {loading ? <Spinner /> : "Login"}
             </Button>
           </Field>
 
-          <p className='text-muted-foreground text-center'>
+          <p className='text-muted-foreground text-center mt-6'>
             Don't have an account?{" "}
             <Link
               href={"/register"}

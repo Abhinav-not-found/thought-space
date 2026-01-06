@@ -8,7 +8,7 @@ import {
 import LogoutBtn from "../btn/logout-btn"
 import ProfileBtn from "../btn/profile-btn"
 import SettingsBtn from "../btn/settings-btn"
-import MyBlogBtn from "../btn/my-blog-btn"
+import MyThoughtBtn from "../btn/my-thought-btn"
 
 const CustomAvatar = () => {
   return (
@@ -22,7 +22,7 @@ const CustomAvatar = () => {
       <DropdownMenuContent>
         <div className='text-left'>
           <ProfileBtn />
-          <MyBlogBtn/>
+          <MyThoughtBtn/>
           <SettingsBtn />
           <LogoutBtn />
         </div>

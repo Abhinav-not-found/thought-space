@@ -36,7 +36,9 @@ const RegisterForm = () => {
   ]
 
   return (
-    <form onSubmit={(e) => handleRegister(e, form, toast,router, { setLoading })}>
+    <form
+      onSubmit={(e) => handleRegister(e, form, toast, router, { setLoading })}
+    >
       <FieldSet>
         <FieldGroup>
           {fields.map(({ id, label, placeholder, type }) => (
@@ -53,12 +55,16 @@ const RegisterForm = () => {
           ))}
 
           <Field orientation='horizontal'>
-            <Button type='submit' disabled={loading}>
-              {loading ? <Spinner/> : "Register"}
+            <Button
+              type='submit'
+              disabled={loading}
+              className={"w-full py-6 text-lg rounded-md"}
+            >
+              {loading ? <Spinner /> : "Register"}
             </Button>
           </Field>
 
-          <p className='text-muted-foreground text-center'>
+          <p className='text-muted-foreground text-center mt-6'>
             Already have an account?{" "}
             <Link
               href={"/login"}

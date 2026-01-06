@@ -6,8 +6,6 @@ import Trending from "@/components/section/trending"
 import Why from "@/components/section/why"
 import Write from "@/components/section/write"
 
-// change(UI) blog to thoughts ex: my blogs - my thoughts, featured thoughts
-
 export default async function LandingPage() {
   return (
     <AuthRedirect>
