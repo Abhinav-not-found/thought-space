@@ -1,12 +1,18 @@
 import User from "@/models/user.model"
 
 export const generateUsername = async (name) => {
-  const base = name.toLowerCase().replace(/[^a-z0-9]/g, "").slice(0, 20)
-  let username = base
-  let count = 1
+  const base = name
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, "")
+    .slice(0, 16)
 
-  while (await User.findOne({ username })) {
-    username = `${base}${count++}`
+  let username
+  let exists = true
+
+  while (exists) {
+    const randomNumber = Math.floor(100 + Math.random() * 9900)
+    username = `${base}${randomNumber}`
+    exists = await User.findOne({ username })
   }
 
   return username

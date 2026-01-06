@@ -1,13 +1,34 @@
-const BlogCard2 = () => {
+import { getAuthorInfo } from "@/helpers/blog-server/get-author-info"
+import Link from "next/link"
+import CardSkeleton from "../skeleton/card-sk"
+
+// change the skeleton so that the logo is in middle and it looks like footer(faded at the bottom)
+
+const BlogCard2 = async ({ data }) => {
+  const author = await getAuthorInfo(data?.authorId.toString())
+  const formattedDate = new Date(data?.createdAt).toDateString()
+
   return (
     <div className='w-82 h-62 rounded-lg'>
-      <div className='w-full h-2/3 bg-neutral-100 rounded-t-lg'></div>
+      <CardSkeleton/>
       <div className='w-full h-1/3 p-2'>
-        <div className='flex gap-1 mt-1'>
-          <p className='text-sm text-muted-foreground'>Author</p>
-          <p className='text-sm text-muted-foreground'>Date</p>
+        <div className='flex gap-2 mt-1'>
+          <Link
+            href={`/profile/${author?.username}`}
+            className='text-sm text-muted-foreground hover:underline underline-offset-2'
+          >
+            {author?.username || "author"}
+          </Link>
+          <p className='text-sm text-muted-foreground'>
+            {formattedDate || "date"}
+          </p>
         </div>
-        <p className='text-2xl font-medium tracking-tighter mt-1'>Title</p>
+        <Link
+          href={`/blog/${data?.slug}`}
+          className='text-2xl font-medium tracking-tighter mt-1 first-letter:uppercase hover:underline underline-offset-2'
+        >
+          {data?.title || "Title"}
+        </Link>
       </div>
     </div>
   )

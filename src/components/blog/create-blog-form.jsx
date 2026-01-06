@@ -37,7 +37,7 @@ const CreateBlogForm = () => {
         className='w-full h-80 outline-none mt-4'
       />
       <div className='flex gap-2'>
-        <Button variant='outline'>Save as draft</Button>
+        {/* <Button variant='outline'>Save as draft</Button> */}
         <Button type='submit' disabled={loading}>
           {loading ? <Spinner /> : "Post"}
         </Button>

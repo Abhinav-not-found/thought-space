@@ -22,3 +22,4 @@ tuesday wednesday
 
 # future
 - edit/ custom username
+- add a channel log showcasing every update

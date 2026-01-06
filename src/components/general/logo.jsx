@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Bytesized } from "next/font/google"
 
-const press_Start_2P = Bytesized({
+const bytesized = Bytesized({
   subsets: ["latin"],
   weight: ["400"],
 })
@@ -9,7 +9,7 @@ const press_Start_2P = Bytesized({
 const Logo = ({ token }) => {
   return (
     <Link href={token ? "/home" : "/"} className='flex select-none'>
-      <p className={`font-extrabold text-4xl ${press_Start_2P.className}`}>
+      <p className={`font-extrabold text-4xl ${bytesized.className}`}>
         TS
       </p>
     </Link>
