@@ -20,7 +20,7 @@ const BlogCard2 = async ({ data }) => {
     <div className='w-100 md:w-82 h-70  md:h-62 rounded-lg'>
       <CardSkeleton />
       <div className='w-full h-1/3 p-2'>
-        <div className='flex gap-2 mt-1'>
+        <div className='flex gap-2 mt-1 mb-1'>
           <Link
             href={`/profile/${author?.username}`}
             className='text-sm md:text-xs text-muted-foreground hover:underline underline-offset-2'
