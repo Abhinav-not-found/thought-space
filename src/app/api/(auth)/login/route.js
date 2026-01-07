@@ -39,6 +39,10 @@ export async function POST(req) {
       return NextResponse.json({ message: "Invalid credentials", code: "INVALID_CRED" }, { status: 401 })
     }
 
+    if (user.isBanned) {
+      return NextResponse.json({ message: "Your account has been banned.", code: "ACCOUNT_BANNED" }, { status: 401 })
+    }
+
     const token = jwt.sign(
       { userId: user._id },
       process.env.JWT_SECRET,

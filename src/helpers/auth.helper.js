@@ -53,6 +53,7 @@ export const handleLogin = async (e, form, toast, router, { setLoading }) => {
         case "PASSWORD_TOO_SHORT":
         case "EMAIL_ALREADY_REGISTERED":
         case "VALIDATION_ERROR":
+        case "ACCOUNT_BANNED":
         case "REGISTER_DISABLED":
           toast.error(data.message)
           break
