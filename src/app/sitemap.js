@@ -1,8 +1,8 @@
-import { getAllBlogs } from "@/helpers/blog-server/get-global-feed"
+import { getGlobalFeed } from "@/helpers/blog-server/get-global-feed"
 import { getAllUsers } from "@/helpers/user.helper"
 
 export default async function sitemap() {
-  const blogs = await getAllBlogs()
+  const blogs = await getGlobalFeed()
   const users = await getAllUsers()
 
   const baseUrl = "https://thought-space-ak.vercel.app"
