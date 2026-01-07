@@ -1,5 +1,4 @@
-import { MetadataRoute } from "next"
-import { getAllBlogs } from "@/helpers/blog-server/get-all-blogs"
+import { getAllBlogs } from "@/helpers/blog-server/get-global-feed"
 import { getAllUsers } from "@/helpers/user.helper"
 
 export default async function sitemap() {
@@ -14,7 +13,7 @@ export default async function sitemap() {
   }))
 
   const profileUrls = users.map((user) => ({
-    url: `${baseUrl}/profile/${user.name}`,
+    url: `${baseUrl}/profile/${user.username}`,
     lastModified: user.updatedAt,
   }))
 
