@@ -5,7 +5,7 @@ import { cookies } from "next/headers"
 import { Button } from "../ui/button"
 import WriteBtn from "../btn/write-btn"
 import Logo from "./logo"
-import CustomAvatar from "./custom-avatar"
+import CustomAvatar from "../ui/custom-avatar"
 
 const Navbar = async () => {
   const cookieStore = await cookies()

@@ -5,10 +5,12 @@ import Hero from "@/components/section/hero"
 import Trending from "@/components/section/trending"
 import Why from "@/components/section/why"
 import Write from "@/components/section/write"
+import SetBeta from "@/lib/setBeta"
 
 export default async function LandingPage() {
   return (
     <AuthRedirect>
+      <SetBeta/>
       <Container>
         <Hero />
         <Why />

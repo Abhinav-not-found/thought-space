@@ -1,8 +1,10 @@
 import BlogCard2 from "@/components/blog/blog-card2"
+import BetaToast from "@/components/general/beta-toast"
 
 const Home = () => {
   return (
-    <main className='flex gap-4'>
+    <main className='flex gap-4 relative'>
+      <BetaToast />
       <div className='flex gap-4'>
         <BlogCard2 />
         <BlogCard2 />
