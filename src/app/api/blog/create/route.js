@@ -12,7 +12,7 @@ export async function POST(req) {
 
     if (!title || !content) {
       return NextResponse.json(
-        { message: "All fields are required" },
+        { code: "FIELDS_REQUIRED", message: "All fields are required" },
         { status: 400 }
       )
     }
@@ -69,6 +69,15 @@ export async function POST(req) {
       return NextResponse.json(
         { message: "Slug already exists, retry" },
         { status: 409 }
+      )
+    }
+    if (error.name === "ValidationError") {
+      return NextResponse.json(
+        {
+          code: "VALIDATION_ERROR",
+          message: error.message,
+        },
+        { status: 400 }
       )
     }
     return NextResponse.json({ message: "Server error" }, { status: 500 })

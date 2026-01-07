@@ -32,13 +32,14 @@ const Developer = () => {
       <section className='space-y-2'>
         <p className='font-medium'>Planned features</p>
         <ul className='list-disc list-inside text-muted-foreground'>
-          <li>Enhanced writing editor</li>
+          <li>Enhanced writing editor + save as draft</li>
           <li>Image uploads (posts and profile pictures)</li>
           <li>Custom usernames</li>
           <li>Profile customization</li>
           <li>Account and settings management</li>
           <li>Changelog & Updates</li>
           <li>Trending and featured blogs</li>
+          <li>Admin panel</li>
           <li>Admin panel</li>
         </ul>
       </section>

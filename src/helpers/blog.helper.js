@@ -14,12 +14,25 @@ export const handleCreateBlog = async (
       body: JSON.stringify({ ...form }),
     })
     const data = await res.json()
+    if (!res.ok) {
+      switch (data.code) {
+        case "FIELDS_REQUIRED":
+          toast.error("All fields are required.")
+          break
 
-    if (res.ok) {
-      toast.success(data.message)
-      router.push("/home")
-      router.refresh()
+        case "VALIDATION_ERROR":
+          toast.error(data.message)
+          break
+
+        default:
+          toast.error("Failed to submit feedback.")
+      }
+      return
     }
+
+    toast.success(data.message)
+    router.push("/home")
+    router.refresh()
   } catch (error) {
     console.log(error)
   } finally {

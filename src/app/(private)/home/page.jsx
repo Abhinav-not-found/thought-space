@@ -1,8 +1,6 @@
 import BlogCard2 from "@/components/blog/blog-card2"
 import BetaToast from "@/components/general/beta-toast"
 
-// make a global blog feed
-
 const Home = () => {
   return (
     <main className='flex gap-4 relative'>

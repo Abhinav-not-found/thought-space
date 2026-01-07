@@ -26,7 +26,7 @@ const DevBtn = () => {
     <Link
       href='/developer'
       onClick={() => handleClose()}
-      className='flex items-center gap-2'
+      className='flex items-center gap-0'
     >
       {ring && <PulseDot />}
       <Button
