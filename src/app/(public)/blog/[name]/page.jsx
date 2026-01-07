@@ -19,10 +19,10 @@ const BlogDetail = async ({ params }) => {
     : "date"
 
   return (
-    <main>
-      <div className='bg-neutral-100 dark:bg-neutral-800 w-full h-90 rounded-md'></div>
-      <article className='mt-4'>
-        <h1 className='text-5xl first-letter:uppercase font-medium'>
+    <main className="w-full h-full">
+      <div className='bg-neutral-100 dark:bg-neutral-800 w-full h-40 md:h-90 rounded-md'></div>
+      <article className='mt-4 px-2 md:px-0'>
+        <h1 className='text-4xl md:text-5xl first-letter:uppercase font-medium'>
           {data?.title}
         </h1>
         <div className='mt-4 flex items-center gap-4 text-muted-foreground'>

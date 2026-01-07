@@ -31,9 +31,12 @@ const DevBtn = () => {
       {ring && <PulseDot />}
       <Button
         variant='ghost'
-        className='font-light text-muted-foreground hover:underline hover:bg-transparent underline-offset-2'
+        className='hover:underline hover:bg-transparent underline-offset-2'
       >
-        Note from developer
+        <p className='font-light text-muted-foreground hidden md:block'>
+          Note from developer
+        </p>
+        <p className='block md:hidden font-light text-muted-foreground'>developer</p>
       </Button>
     </Link>
   )

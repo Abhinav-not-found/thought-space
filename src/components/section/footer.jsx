@@ -3,13 +3,15 @@ import React from "react"
 
 const Footer = () => {
   return (
-    <footer className='md:w-5xl mx-auto mt-32 py-5'>
-      <h2 className='text-6xl md:text-9xl font-extrabold text-center text-transparent bg-clip-text bg-linear-to-b from-neutral-200 dark:from-neutral-700 via-neutral-200/60 dark:via-neutral-800 to-neutral-50/30 dark:to-neutral-950 select-none'>
+    <footer className='w-full md:w-5xl mx-auto mt-32 py-5'>
+      <h2 className='text-[42px] md:text-9xl font-extrabold text-center text-transparent bg-clip-text bg-linear-to-b from-neutral-200 dark:from-neutral-700 via-neutral-200/60 dark:via-neutral-800 to-neutral-50/30 dark:to-neutral-950 select-none'>
         Thought Space
       </h2>
-      <div className='flex justify-center gap-2 md:mt-5 mb-5 text-muted-foreground'>
-        <p>© 2024 Thought Space. All rights reserved.</p>
-        <p>
+      <div className='flex flex-col md:flex-row items-center justify-center gap-2 md:mt-5 mb-5 text-muted-foreground'>
+        <p className='text-xs md:text-base'>
+          © 2024 Thought Space. All rights reserved.
+        </p>
+        <p className='text-xs md:text-base'>
           Built by{" "}
           <Link
             href={"https://dev-abhinav.vercel.app/"}

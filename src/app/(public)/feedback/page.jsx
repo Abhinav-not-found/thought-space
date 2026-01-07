@@ -10,11 +10,11 @@ const Feedback = () => {
         <Heading>
           <Bold>Feedback</Bold> Form
         </Heading>
-        <p className='text-muted-foreground text-lg mt-3'>
+        <p className='text-muted-foreground text-base md:text-lg mt-3'>
           Share your feedback to help us improve
         </p>
       </div>
-      <div className='max-w-sm md:max-w-xl mx-auto'>
+      <div className='max-w-xl mx-auto px-4 md:px-0'>
         <FeedbackForm />
       </div>
       <Footer/>

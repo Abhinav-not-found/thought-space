@@ -8,7 +8,7 @@ const Hero = () => {
         Thought = Blog
       </p>
 
-      <h1 className='text-4xl md:text-6xl text-center  tracking-tight leading-10 md:leading-16'>
+      <h1 className='text-3xl md:text-6xl text-center  tracking-tight leading-10 md:leading-16'>
         <span className='font-semibold'>Thought Space </span>
         — Where <br />
         Ideas Become Blogs

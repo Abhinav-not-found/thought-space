@@ -4,12 +4,11 @@ import { getGlobalFeed } from "@/helpers/blog-server/get-global-feed"
 
 const Home = async () => {
   const globalFeed = await getGlobalFeed()
-  console.log(globalFeed)
 
   return (
-    <main className='flex gap-4 relative'>
+    <main className='flex gap-4 relative w-full'>
       <BetaToast />
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-6 ml-6 md:ml-0 flex-1'>
+      <div className='grid grid-cols-1 md:grid-cols-3 gap-6 -ml-1 md:ml-0'>
         {globalFeed.map((blog) => (
           <BlogCard2 key={blog._id} data={blog} />
         ))}

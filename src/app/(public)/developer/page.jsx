@@ -11,7 +11,7 @@ const Developer = () => {
         <Bold>Beta</Bold> Release
       </Heading>
 
-      <section className='space-y-2 px-6 md:px-0'>
+      <section className='space-y-2 px-4 md:px-0'>
         <p>
           This application is currently in <strong>beta</strong>. Features may
           be incomplete, change without notice, or contain bugs. We are actively
@@ -19,7 +19,7 @@ const Developer = () => {
         </p>
       </section>
 
-      <section className='space-y-2 px-6 md:px-0'>
+      <section className='space-y-2 px-4 md:px-0'>
         <p className='font-medium'>Current features</p>
         <ul className='list-disc list-inside text-muted-foreground'>
           <li>User authentication (sign up and login)</li>
@@ -29,7 +29,7 @@ const Developer = () => {
         </ul>
       </section>
 
-      <section className='space-y-2 px-6 md:px-0'>
+      <section className='space-y-2 px-4 md:px-0'>
         <p className='font-medium'>Planned features</p>
         <ul className='list-disc list-inside text-muted-foreground'>
           <li>Enhanced writing editor + save as draft</li>
@@ -46,7 +46,7 @@ const Developer = () => {
 
       <hr />
 
-      <section className='space-y-2 px-6 md:px-0'>
+      <section className='space-y-2 px-4 md:px-0'>
         <p className='font-medium'>Feedback</p>
         <p>
           Your feedback plays an important role in shaping this product. If you

@@ -19,7 +19,7 @@ const Profile = async ({ params }) => {
           {/* <button>...</button> */}
         </div>
         <section
-          className='mt-5 grid grid-cols-1 md:grid-cols-2 gap-6 ml-6 md:ml-0 flex-1'
+          className='mt-5 grid grid-cols-1 md:grid-cols-2 gap-6 ml-3 md:ml-0 flex-1'
           aria-label='user blogs'
         >
           {blogs.map((i, index) => {

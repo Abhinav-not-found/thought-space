@@ -6,7 +6,7 @@ import { PenBox } from "lucide-react"
 const WriteBtn = () => {
   return (
     <Link href={"/blog/create"}>
-      <Button variant='outline'>
+      <Button variant='outline' >
         <PenBox />
         Write
       </Button>

@@ -1,7 +1,7 @@
 import React from "react"
 
 const Heading = ({ children }) => {
-  return <h1 className='text-4xl md:text-6xl text-center tracking-tight'>{children}</h1>
+  return <h1 className='text-3xl md:text-6xl text-center tracking-tight'>{children}</h1>
 }
 
 export const Bold = ({ children }) => {

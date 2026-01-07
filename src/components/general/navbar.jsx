@@ -13,13 +13,13 @@ const Navbar = async () => {
   const token = cookieStore.get("token")
 
   return (
-    <header className='h-14 md:max-w-5xl mx-auto flex items-center justify-between px-4 md:px-0'>
+    <header className='h-14 max-w-full md:max-w-5xl mx-auto flex items-center justify-between px-2 md:px-0'>
       <Logo token={token} />
-      <div className='flex items-center gap-2'>
+      <div className='flex items-center gap-0 md:gap-2'>
         {token && <DevBtn />}
         <ModeToggle />
         {token ? (
-          <div className='flex gap-3'>
+          <div className='flex md:gap-3 gap-0'>
             <WriteBtn />
             <CustomAvatar />
           </div>
