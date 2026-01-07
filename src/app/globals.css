@@ -150,3 +150,37 @@
 .animation-delay-4000 {
   animation-delay: 4s;
 }
+
+
+
+/* Pulse Dot  */
+
+.ring-container {
+    position: relative;
+}
+
+.circle {
+    width: 6px;
+    height: 6px;
+    background-color: #2c9ee0;
+    border-radius: 50%;
+
+}
+
+.ringing {
+    border: 3px solid #42acea;
+    -webkit-border-radius: 25px;
+    height: 12px;
+    width: 12px;
+    position: absolute;
+    left: -3px;
+    top: -3px;
+    -webkit-animation: pulsate 1.4s ease-out;
+    -webkit-animation-iteration-count: infinite; 
+    opacity: 0.0
+}
+@-webkit-keyframes pulsate {
+    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+}

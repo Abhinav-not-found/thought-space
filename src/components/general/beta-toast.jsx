@@ -11,7 +11,6 @@ const BetaToast = () => {
     setBeta(value === "true")
   }, [])
 
-  console.log(beta)
 
   const handleClose = () => {
     setBeta(false)
