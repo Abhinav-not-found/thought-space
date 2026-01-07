@@ -14,7 +14,7 @@ const Feedback = () => {
           Share your feedback to help us improve
         </p>
       </div>
-      <div className='max-w-xl mx-auto'>
+      <div className='max-w-sm md:max-w-xl mx-auto'>
         <FeedbackForm />
       </div>
       <Footer/>

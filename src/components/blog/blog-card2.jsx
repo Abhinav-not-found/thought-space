@@ -17,23 +17,23 @@ const BlogCard2 = async ({ data }) => {
     : "date"
 
   return (
-    <div className='w-82 h-62 rounded-lg'>
+    <div className='w-100 md:w-82 h-70  md:h-62 rounded-lg'>
       <CardSkeleton />
       <div className='w-full h-1/3 p-2'>
         <div className='flex gap-2 mt-1'>
           <Link
             href={`/profile/${author?.username}`}
-            className='text-xs text-muted-foreground hover:underline underline-offset-2'
+            className='text-sm md:text-xs text-muted-foreground hover:underline underline-offset-2'
           >
             {author?.username || "author"}
           </Link>
-          <p className='text-xs text-muted-foreground'>
+          <p className='text-sm md:text-xs text-muted-foreground'>
             {formattedDate || "date"}
           </p>
         </div>
         <Link
           href={`/blog/${data?.slug}`}
-          className='text-xl font-medium tracking-tight mt-1 first-letter:uppercase hover:underline underline-offset-2'
+          className='text-2xl md:text-xl font-medium tracking-tight mt-1 first-letter:uppercase hover:underline leading-6 md:leading-0 underline-offset-2'
         >
           {data?.title || "Title"}
         </Link>

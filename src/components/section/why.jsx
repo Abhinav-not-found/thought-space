@@ -4,12 +4,12 @@ import { BookOpen, Brain, Pencil } from "lucide-react"
 
 const Why = () => {
   return (
-    <section className='w-full h-[60vh] mt-24'>
+    <section className='w-full h-fit md:h-[60vh] md:mt-24'>
       <Heading>
         <Bold>Why</Bold> Thought Space?
       </Heading>
 
-      <div className='flex justify-center gap-14 mt-14'>
+      <div className='flex flex-col md:flex-row items-center justify-center gap-5 md:gap-14 mt-14'>
         <Card
           title='Built for Clear Thinking'
           description='A distraction-free space designed to help you focus on ideas, not noise or vanity metrics.'

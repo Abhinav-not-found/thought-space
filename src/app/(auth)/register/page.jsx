@@ -13,7 +13,7 @@ const Register = () => {
           Join us to start sharing your thoughts
         </p>
       </div>
-      <div className='max-w-lg mx-auto'>
+      <div className='max-w-sm md:max-w-lg mx-auto'>
         <RegisterForm />
       </div>
     </main>

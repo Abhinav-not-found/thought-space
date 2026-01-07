@@ -4,6 +4,7 @@ import { Bytesized } from "next/font/google"
 const bytesized = Bytesized({
   subsets: ["latin"],
   weight: ["400"],
+  fallback: ["sans-serif"],
 })
 
 const Logo = ({ token }) => {

@@ -10,15 +10,18 @@ const Profile = async ({ params }) => {
   const blogs = await getUserBlogs(data._id)
 
   return (
-    <main className='flex gap-6 pt-5'>
+    <main className='flex flex-col-reverse md:flex-row gap-6 pt-5'>
       <div className='w-2/3 h-screen'>
-        <div className='flex justify-between'>
+        <div className='flex justify-between ml-4 md:ml-0 '>
           <h1 className='text-4xl font-semibold first-letter:uppercase'>
             {data.username}
           </h1>
           {/* <button>...</button> */}
         </div>
-        <section className='mt-5 grid grid-cols-2 gap-6 flex-1' aria-label='user blogs'>
+        <section
+          className='mt-5 grid grid-cols-1 md:grid-cols-2 gap-6 ml-6 md:ml-0 flex-1'
+          aria-label='user blogs'
+        >
           {blogs.map((i, index) => {
             return <BlogCard2 key={index} data={i} />
           })}

@@ -5,7 +5,7 @@ const Container = ({ children }) => {
   return (
     <>
       <Navbar />
-      <div className='max-w-5xl mx-auto'>{children}</div>
+      <div className='w-full max-w-full md:max-w-5xl mx-auto'>{children}</div>
     </>
   )
 }

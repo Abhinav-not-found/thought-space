@@ -20,7 +20,7 @@ const CreateBlogForm = () => {
   return (
     <form
       onSubmit={(e) => handleCreateBlog(e, form, router, { setLoading, toast })}
-      className='space-y-4'
+      className='space-y-4 mx-6 md:mx-0'
     >
       <input
         id='title'
