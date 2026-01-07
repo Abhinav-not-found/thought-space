@@ -1,14 +1,20 @@
 import { NextResponse } from "next/server"
-import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken"
 import { connectDB } from "@/lib/db"
 import User from "@/models/user.model"
 
 export async function POST(req) {
   try {
+    const loginStatus = process.env.LOGIN
+
+    if (loginStatus !== "enable") {
+      return NextResponse.json(
+        { message: "Login has been temporarily disabled by the administrator. Please try again later.", code: "LOGIN_DISABLED" },
+        { status: 403 }
+      )
+    }
+
     await connectDB()
-
-
 
     const { email, password } = await req.json()
 

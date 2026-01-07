@@ -6,6 +6,14 @@ import jwt from 'jsonwebtoken'
 
 export async function POST(req) {
   try {
+    const createStatus = process.env.CREATE_BLOG
+
+    if (createStatus !== "enable") {
+      return NextResponse.json(
+        { message: "Blog creation has been temporarily disabled by the administrator. Please try again later.", code: "CREATE_BLOG_DISABLED" },
+        { status: 403 }
+      )
+    }
     await connectDB()
 
     const { title, content } = await req.json()

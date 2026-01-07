@@ -20,6 +20,10 @@ export const handleCreateBlog = async (
           toast.error("All fields are required.")
           break
 
+        case "CREATE_BLOG_DISABLED":
+          toast.error(data.message)
+          break
+
         case "VALIDATION_ERROR":
           toast.error(data.message)
           break

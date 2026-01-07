@@ -8,6 +8,14 @@ import jwt from "jsonwebtoken"
 
 export async function POST(req) {
   try {
+
+    const feedbackStatus = process.env.FEEDBACK
+    if (feedbackStatus !== "enable") {
+      return NextResponse.json(
+        { message: "Feedback has been temporarily disabled by the administrator. Please try again later.", code: "FEEDBACK_DISABLED" },
+        { status: 403 }
+      )
+    }
     await connectDB()
 
     const cookieStore = await cookies()

@@ -45,6 +45,10 @@ const FeedbackForm = () => {
             toast.error("Please fill in all required fields.")
             break
 
+          case "FEEDBACK_DISABLED":
+            toast.error(data.message)
+            break
+
           case "VALIDATION_ERROR":
             toast.error(data.message)
             break

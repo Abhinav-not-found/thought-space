@@ -12,20 +12,15 @@ export const handleRegister = async (e, form, toast, router, { setLoading }) => 
     if (!res.ok) {
       switch (data.code) {
         case "FIELDS_REQUIRED":
-          toast.error(data.message)
-          break
         case "PASSWORD_TOO_SHORT":
-          toast.error(data.message)
-          break
         case "EMAIL_ALREADY_REGISTERED":
-          toast.error(data.message)
-          break
         case "VALIDATION_ERROR":
+        case "REGISTER_DISABLED":
           toast.error(data.message)
           break
 
         default:
-          toast.error("Failed to submit feedback.")
+          toast.error(data.message || "Something went wrong")
       }
       return
     }
@@ -55,18 +50,15 @@ export const handleLogin = async (e, form, toast, router, { setLoading }) => {
     if (!res.ok) {
       switch (data.code) {
         case "FIELDS_REQUIRED":
-          toast.error(data.message)
-          break
-        case "INVALID_CRED":
-          toast.error(data.message)
-          break
-
+        case "PASSWORD_TOO_SHORT":
+        case "EMAIL_ALREADY_REGISTERED":
         case "VALIDATION_ERROR":
+        case "REGISTER_DISABLED":
           toast.error(data.message)
           break
 
         default:
-          toast.error("Failed to submit feedback.")
+          toast.error(data.message || "Something went wrong")
       }
       return
     }

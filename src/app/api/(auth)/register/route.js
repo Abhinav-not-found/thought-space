@@ -5,6 +5,15 @@ import { generateUsername } from "@/lib/generateUsername"
 
 export async function POST(req) {
   try {
+
+    const registerStatus = process.env.REGISTER
+
+    if (registerStatus !== "enable") {
+      return NextResponse.json(
+        { message: "Registration has been temporarily disabled by the administrator. Please try again later.", code: "REGISTER_DISABLED" },
+        { status: 403 }
+      )
+    }
     await connectDB()
 
     const { name, email, password } = await req.json()
