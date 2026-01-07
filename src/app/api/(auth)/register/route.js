@@ -11,14 +11,14 @@ export async function POST(req) {
 
     if (!name || !email || !password) {
       return NextResponse.json(
-        { message: "All fields are required" },
+        { code: "FIELDS_REQUIRED", message: "All fields are required" },
         { status: 400 }
       )
     }
 
     if (password.length < 6) {
       return NextResponse.json(
-        { message: "Password must be at least 6 characters" },
+        { code: "PASSWORD_TOO_SHORT", message: "Password must be at least 6 characters" },
         { status: 400 }
       )
     }
@@ -26,7 +26,7 @@ export async function POST(req) {
     const existingUser = await User.findOne({ email })
     if (existingUser) {
       return NextResponse.json(
-        { message: "Email already registered" },
+        { code: "EMAIL_ALREADY_REGISTERED", message: "Email already registered" },
         { status: 409 }
       )
     }
@@ -35,7 +35,7 @@ export async function POST(req) {
     const user = await User.create({
       name,
       email,
-      password, 
+      password,
       username
     })
 
@@ -51,6 +51,15 @@ export async function POST(req) {
       { status: 201 }
     )
   } catch (error) {
+    if (error.name === "ValidationError") {
+      return NextResponse.json(
+        {
+          code: "VALIDATION_ERROR",
+          message: error.message,
+        },
+        { status: 400 }
+      )
+    }
     console.error(error)
     return NextResponse.json(
       { message: "Server error" },

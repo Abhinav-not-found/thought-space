@@ -2,12 +2,6 @@ export const handleRegister = async (e, form, toast, router, { setLoading }) => 
   e.preventDefault()
   setLoading(true)
 
-  if (!form.name || !form.email || !form.password) {
-    toast.error("All fields are required")
-    setLoading(false)
-    return
-  }
-
   try {
     const res = await fetch("/api/register", {
       method: "POST",
@@ -15,10 +9,30 @@ export const handleRegister = async (e, form, toast, router, { setLoading }) => 
       body: JSON.stringify(form),
     })
     const data = await res.json()
-    if (res.ok) {
-      toast.success(data.message)
-      router.push('/login')
+    if (!res.ok) {
+      switch (data.code) {
+        case "FIELDS_REQUIRED":
+          toast.error(data.message)
+          break
+        case "PASSWORD_TOO_SHORT":
+          toast.error(data.message)
+          break
+        case "EMAIL_ALREADY_REGISTERED":
+          toast.error(data.message)
+          break
+        case "VALIDATION_ERROR":
+          toast.error(data.message)
+          break
+
+        default:
+          toast.error("Failed to submit feedback.")
+      }
+      return
     }
+
+    toast.success(data.message)
+    router.push('/login')
+
   } catch (error) {
     console.log(error)
     toast.error(error.message)
