@@ -29,7 +29,7 @@ const FeedbackForm = () => {
     setLoading(true)
 
     try {
-      const response = await fetch("/api/feedback", {
+      const res = await fetch("/api/feedback", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -37,9 +37,9 @@ const FeedbackForm = () => {
         body: JSON.stringify(form),
       })
 
-      const data = await response.json()
+      const data = await res.json()
 
-      if (!response.ok) {
+      if (!res.ok) {
         switch (data.code) {
           case "FIELDS_REQUIRED":
             toast.error("Please fill in all required fields.")

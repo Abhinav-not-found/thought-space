@@ -8,17 +8,29 @@ export async function POST(req) {
   try {
     await connectDB()
 
+
+
     const { email, password } = await req.json()
+
+    if (!email || !password) {
+      return NextResponse.json(
+        {
+          code: "FIELDS_REQUIRED",
+          message: "All fields are required",
+        },
+        { status: 400 }
+      )
+    }
 
     const user = await User.findOne({ email }).select("+password")
     if (!user) {
-      return NextResponse.json({ message: "Invalid credentials" }, { status: 401 })
+      return NextResponse.json({ message: "Invalid credentials", code: "INVALID_CRED", }, { status: 401 })
     }
 
     const isMatch = await user.matchPassword(password)
 
     if (!isMatch) {
-      return NextResponse.json({ message: "Invalid credentials" }, { status: 401 })
+      return NextResponse.json({ message: "Invalid credentials", code: "INVALID_CRED" }, { status: 401 })
     }
 
     const token = jwt.sign(
@@ -42,6 +54,16 @@ export async function POST(req) {
 
     return res
   } catch (error) {
+    if (error.name === "ValidationError") {
+      return NextResponse.json(
+        {
+          code: "VALIDATION_ERROR",
+          message: error.message,
+        },
+        { status: 400 }
+      )
+    }
+    console.log(error)
     return NextResponse.json({ message: "Server error" }, { status: 500 })
   }
 }
