@@ -39,6 +39,7 @@ const Developer = () => {
           <li>Account and settings management</li>
           <li>Changelog & Updates</li>
           <li>Trending and featured blogs</li>
+          <li>Admin panel</li>
         </ul>
       </section>
 

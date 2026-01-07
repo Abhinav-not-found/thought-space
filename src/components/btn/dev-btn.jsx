@@ -31,7 +31,7 @@ const DevBtn = () => {
       {ring && <PulseDot />}
       <Button
         variant='ghost'
-        className='font-thin hover:underline hover:bg-transparent'
+        className='font-light hover:underline hover:bg-transparent'
       >
         Note from developer
       </Button>
