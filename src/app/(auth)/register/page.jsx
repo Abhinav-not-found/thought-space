@@ -21,3 +21,7 @@ const Register = () => {
 }
 
 export default Register
+export const metadata = {
+  title: "Register – Thought Space",
+  robots: { index: false, follow: false },
+}

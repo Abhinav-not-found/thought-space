@@ -20,3 +20,10 @@ const Login = () => {
 }
 
 export default Login
+
+
+export const metadata = {
+  title: "Login – Thought Space",
+  robots: { index: false, follow: false },
+}
+

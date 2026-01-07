@@ -4,7 +4,7 @@ import { getUserBlogs } from "@/helpers/blog-server/get-user-blogs"
 
 // may be change this to a bento grid
 const Trending = async () => {
-  const blogs = await getUserBlogs("695cb7286b747419a514d096")
+  const blogs = await getUserBlogs("695e45c31839396f1d5ac19e")
 
   return (
     <section className='h-screen pt-28'>
