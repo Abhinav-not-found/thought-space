@@ -14,7 +14,7 @@ export default async function LandingPage() {
       <Container>
         <Hero />
         <Why />
-        <Write />
+        {/* <Write /> */}
         <Trending />
         <Footer />
       </Container>

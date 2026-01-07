@@ -1,5 +1,9 @@
 import { getBlogBySlug } from "@/helpers/blog-server/get-blog-by-slug"
+import Link from "next/link"
 import { notFound } from "next/navigation"
+
+// add skeleton for all elements
+// add image skeleton
 
 const BlogDetail = async ({ params }) => {
   const { name } = await params
@@ -7,7 +11,13 @@ const BlogDetail = async ({ params }) => {
   const data = await getBlogBySlug(name)
   if (!data) notFound()
 
-  const formattedDate = new Date(data?.createdAt).toDateString()
+  const formattedDate = data?.createdAt
+    ? new Date(data.createdAt).toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+      })
+    : "date"
 
   return (
     <main>
@@ -16,13 +26,19 @@ const BlogDetail = async ({ params }) => {
         <h1 className='text-5xl first-letter:uppercase font-medium'>
           {data?.title}
         </h1>
-        <div className='mt-2'>
-          <p className='text-muted-foreground first-letter:uppercase'>
-            {data?.authorId.username} {formattedDate}
-          </p>
+        <div className='mt-4 flex items-center gap-4 text-muted-foreground'>
+          <Link
+            href={`/profile/${data?.authorId.username}`}
+            className='text-muted-foreground first-letter:uppercase hover:underline'
+          >
+            {data?.authorId.username}
+          </Link>
+          <p>{formattedDate}</p>
         </div>
         <div className='mt-8'>
-          <p>{data?.content}</p>
+          <p className='first-letter:uppercase text-xl leading-relaxed'>
+            {data?.content}
+          </p>
         </div>
       </div>
     </main>

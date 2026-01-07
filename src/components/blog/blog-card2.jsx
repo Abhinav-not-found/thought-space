@@ -8,26 +8,32 @@ import CardSkeleton from "../skeleton/card-sk"
 
 const BlogCard2 = async ({ data }) => {
   const author = await getAuthorInfo(data?.authorId.toString())
-  const formattedDate = new Date(data?.createdAt).toDateString()
+  const formattedDate = data?.createdAt
+    ? new Date(data.createdAt).toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+      })
+    : "date"
 
   return (
     <div className='w-82 h-62 rounded-lg'>
-      <CardSkeleton/>
+      <CardSkeleton />
       <div className='w-full h-1/3 p-2'>
         <div className='flex gap-2 mt-1'>
           <Link
             href={`/profile/${author?.username}`}
-            className='text-sm text-muted-foreground hover:underline underline-offset-2'
+            className='text-xs text-muted-foreground hover:underline underline-offset-2'
           >
             {author?.username || "author"}
           </Link>
-          <p className='text-sm text-muted-foreground'>
+          <p className='text-xs text-muted-foreground'>
             {formattedDate || "date"}
           </p>
         </div>
         <Link
           href={`/blog/${data?.slug}`}
-          className='text-2xl font-medium tracking-tighter mt-1 first-letter:uppercase hover:underline underline-offset-2'
+          className='text-xl font-medium tracking-tight mt-1 first-letter:uppercase hover:underline underline-offset-2'
         >
           {data?.title || "Title"}
         </Link>
