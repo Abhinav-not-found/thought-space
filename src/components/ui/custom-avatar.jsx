@@ -11,6 +11,7 @@ import SettingsBtn from "../btn/settings-btn"
 import MyThoughtBtn from "../btn/my-thought-btn"
 import { getUserInfo } from "@/helpers/user.helper"
 import FeedbackBtn from "../btn/feedback-btn"
+import ChangelogBtn from "../btn/changelog-btn"
 
 const CustomAvatar = async () => {
   const data = await getUserInfo()
@@ -26,6 +27,7 @@ const CustomAvatar = async () => {
         <div className='text-left'>
           <ProfileBtn />
           <FeedbackBtn />
+          <ChangelogBtn/>
           {/* <MyThoughtBtn /> */}
           {/* <SettingsBtn /> */}
           <LogoutBtn />
