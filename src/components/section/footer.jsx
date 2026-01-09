@@ -1,9 +1,11 @@
 import Link from "next/link"
 import React from "react"
+import FooterLinks from "../general/footer-links"
 
 const Footer = () => {
   return (
-    <footer className='w-full md:w-5xl mx-auto mt-32 py-5'>
+    <footer className='w-full md:w-5xl mx-auto mt-32 py-5 '>
+      {/* <FooterLinks/> */}
       <h2 className='text-[42px] md:text-9xl font-extrabold text-center text-transparent bg-clip-text bg-linear-to-b from-neutral-200 dark:from-neutral-700 via-neutral-200/60 dark:via-neutral-800 to-neutral-50/30 dark:to-neutral-950 select-none'>
         Thought Space
       </h2>
