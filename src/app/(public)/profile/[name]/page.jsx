@@ -33,5 +33,4 @@ const Profile = async ({ params }) => {
   )
 }
 
-
 export default Profile

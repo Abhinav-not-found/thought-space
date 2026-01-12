@@ -15,7 +15,7 @@ export const getUserInfo = async (username) => {
   if (!token) return null
 
   const { userId } = jwt.verify(token, process.env.JWT_SECRET)
-  return  User.findById(userId).lean()
+  return User.findById(userId).lean()
 }
 
 
@@ -27,4 +27,10 @@ export const getAllUsers = async () => {
     { username: { $exists: true, $ne: "" } },
     { username: 1, updatedAt: 1 }
   ).lean()
+}
+
+export const getUserById = async (userId) => {
+  await connectDB()
+
+  return User.findById(userId).lean()
 }

@@ -1,4 +1,3 @@
-import React from "react"
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
 import {
   DropdownMenu,
@@ -12,15 +11,21 @@ import MyThoughtBtn from "../btn/my-thought-btn"
 import { getUserInfo } from "@/helpers/user.helper"
 import FeedbackBtn from "../btn/feedback-btn"
 import ChangelogBtn from "../btn/changelog-btn"
+import { cookies } from "next/headers"
+import { getProfileInfoById } from "@/helpers/user-server/get-user-by-id"
 
 const CustomAvatar = async () => {
   const data = await getUserInfo()
+  const user = await getProfileInfoById()
+  console.log(user)
+  if (!user) return null
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
         <Avatar>
           <AvatarFallback>{data.name[0].toUpperCase()}</AvatarFallback>
-          {/* <AvatarImage src='https://github.com/shadcn.png' /> */}
+          <AvatarImage src={user.avatar || undefined} />
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
