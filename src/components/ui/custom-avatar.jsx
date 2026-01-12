@@ -27,7 +27,7 @@ const CustomAvatar = async () => {
         <div className='text-left'>
           <ProfileBtn />
           <FeedbackBtn />
-          <ChangelogBtn/>
+          <ChangelogBtn />
           {/* <MyThoughtBtn /> */}
           {/* <SettingsBtn /> */}
           <LogoutBtn />

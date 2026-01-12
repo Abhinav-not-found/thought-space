@@ -34,7 +34,7 @@ const userSchema = new mongoose.Schema(
     },
     bio: {
       type: String,
-      default: ''
+      default: 'Bio is empty'
     },
     isBanned: {
       type: Boolean,

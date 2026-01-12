@@ -1,4 +1,5 @@
 import BlogCard2 from "@/components/blog/blog-card2"
+import ProfileCard from "@/components/profile/profile-card"
 import { getUserBlogs } from "@/helpers/blog-server/get-user-blogs"
 import { getUserInfo } from "@/helpers/user.helper"
 
@@ -27,15 +28,10 @@ const Profile = async ({ params }) => {
           })}
         </section>
       </div>
-      <aside className='w-1/3 h-fit rounded-md p-4'>
-        <div className='size-20 bg-neutral-100 rounded-full'></div>
-        <h2 className='text-xl font-medium mt-2 first-letter:uppercase'>
-          {data.name}
-        </h2>
-        <p>{data.bio}</p>
-      </aside>
+      <ProfileCard data={data} />
     </main>
   )
 }
+
 
 export default Profile
