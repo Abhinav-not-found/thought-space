@@ -2,6 +2,8 @@
 import { useState } from "react"
 import { toast } from "sonner"
 
+// add a character count for 160 characters max limit for bio
+
 const ProfileBio = ({ bio }) => {
   const [IsEditing, setIsEditing] = useState(false)
   const [bioValue, setBioValue] = useState(bio)
