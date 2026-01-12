@@ -10,6 +10,8 @@ const BlogDetail = async ({ params }) => {
 
   const data = await getBlogBySlug(name)
   if (!data) notFound()
+
+  console.log(data)
   const formattedDate = data?.createdAt
     ? new Date(data.createdAt).toLocaleDateString("en-US", {
         month: "short",
@@ -19,10 +21,10 @@ const BlogDetail = async ({ params }) => {
     : "date"
 
   return (
-    <main className="w-full h-full">
+    <main className='w-full h-full'>
       <div className='bg-neutral-100 dark:bg-neutral-800 w-full h-40 md:h-90 rounded-md'></div>
-      <article className='mt-4 px-2 md:px-0'>
-        <h1 className='text-4xl md:text-5xl first-letter:uppercase font-medium'>
+      <article className='mt-4 px-2 md:px-0 mb-20'>
+        <h1 className='text-4xl md:text-5xl first-letter:uppercase font-semibold'>
           {data?.title}
         </h1>
         <div className='mt-4 flex items-center gap-4 text-muted-foreground'>
@@ -34,15 +36,13 @@ const BlogDetail = async ({ params }) => {
           </Link>
           <time dateTime={data.createdAt}>{formattedDate}</time>
         </div>
-        <div className='mt-8'>
-          <p className='first-letter:uppercase text-xl leading-relaxed'>
-            {data?.content}
-          </p>
-        </div>
+        <div
+          className='prose prose-neutral dark:prose-invert max-w-none mt-8 blog-content'
+          dangerouslySetInnerHTML={{ __html: data?.content }}
+        />
       </article>
     </main>
   )
 }
 
 export default BlogDetail
-

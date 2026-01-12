@@ -6,15 +6,20 @@ import { Spinner } from "@/components/ui/spinner"
 import { useRouter } from "next/navigation"
 import { toast } from "sonner"
 import { handleCreateBlog } from "@/helpers/blog.helper"
+import Tiptap from "../general/Tiptap"
 
 const CreateBlogForm = () => {
   const router = useRouter()
   const [form, setForm] = useState({ title: "", content: "" })
   const [loading, setLoading] = useState(false)
+  console.log(form)
 
   const handleChange = (e) => {
     const { id, value } = e.target
     setForm((prev) => ({ ...prev, [id]: value }))
+  }
+  const handleContentChange = (html) => {
+    setForm((prev) => ({ ...prev, content: html }))
   }
 
   return (
@@ -29,13 +34,14 @@ const CreateBlogForm = () => {
         placeholder='Title'
         className='w-full text-5xl font-semibold placeholder:text-neutral-300/80 dark:placeholder:text-neutral-600 outline-none'
       />
-      <textarea
+      {/* <textarea
         id='content'
         value={form.content}
         onChange={handleChange}
         placeholder='Blog'
         className='w-full h-80 outline-none mt-4'
-      />
+      /> */}
+      <Tiptap content={form.content} onChange={handleContentChange} />
       <div className='flex gap-2'>
         {/* <Button variant='outline'>Save as draft</Button> */}
         <Button type='submit' disabled={loading}>

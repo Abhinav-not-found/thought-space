@@ -17,7 +17,6 @@ import { getProfileInfoById } from "@/helpers/user-server/get-user-by-id"
 const CustomAvatar = async () => {
   const data = await getUserInfo()
   const user = await getProfileInfoById()
-  console.log(user)
   if (!user) return null
 
   return (
