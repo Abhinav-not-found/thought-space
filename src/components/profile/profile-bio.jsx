@@ -2,18 +2,18 @@
 import { useState } from "react"
 import { toast } from "sonner"
 
-const ProfileName = ({ name }) => {
+const ProfileBio = ({ bio }) => {
   const [IsEditing, setIsEditing] = useState(false)
-  const [nameValue, setNameValue] = useState(name)
+  const [bioValue, setBioValue] = useState(bio)
 
-  const handleName = async () => {
+  const handleBio = async () => {
     try {
       const res = await fetch("/api/user/edit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name: nameValue }),
+        body: JSON.stringify({ bio: bioValue }),
       })
       const data = await res.json()
       if (!res.ok) {
@@ -24,31 +24,30 @@ const ProfileName = ({ name }) => {
       console.log(error)
     }
   }
-
   return (
     <div>
       {IsEditing ? (
         <input
-          className='text-xl font-medium mt-2 first-letter:uppercase border-b border-gray-300 w-full'
-          value={nameValue}
-          onChange={(e) => setNameValue(e.target.value)}
+          className='text-sm font-medium mt-2 border-b border-gray-300 text-muted-foreground w-full'
+          value={bioValue}
+          onChange={(e) => setBioValue(e.target.value)}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
               setIsEditing(false)
-              handleName()
+              handleBio()
             }
           }}
         />
       ) : (
-        <h2
+        <p
           onClick={() => setIsEditing(!IsEditing)}
-          className='text-xl font-medium mt-2 first-letter:uppercase'
+          className='text-sm first-letter:uppercase text-muted-foreground'
         >
-          {nameValue}
-        </h2>
+          {bioValue}
+        </p>
       )}
     </div>
   )
 }
 
-export default ProfileName
+export default ProfileBio

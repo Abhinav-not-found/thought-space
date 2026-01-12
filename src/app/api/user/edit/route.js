@@ -8,7 +8,7 @@ import User from "@/models/user.model"
 export async function POST(req) {
   try {
     await connectDB()
-    const { name } = await req.json()
+    const { name, bio } = await req.json()
 
     const cookieStore = await cookies()
     const token = cookieStore.get("token")?.value
@@ -31,7 +31,7 @@ export async function POST(req) {
 
     const result = await User.updateOne(
       { _id: userId },
-      { $set: { name } }
+      { $set: { name, bio } }
     )
 
     if (result.modifiedCount === 1) {
