@@ -6,6 +6,8 @@ const blogSchema = new mongoose.Schema(
       type: String,
       required: [true, "title is required"],
       trim: true,
+      minlength: [2, "Title too short"],
+      maxlength: [120, "Title too long"],
     },
     slug: {
       type: String,
@@ -18,11 +20,14 @@ const blogSchema = new mongoose.Schema(
     authorId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
-      required: true
+      required: true,
+      index: true
     },
     content: {
       type: String,
-      required: true
+      required: true,
+      minlength: [10, "Content too short"],
+      maxlength: [50000, "Content too long"],
     }
   },
   { timestamps: true }
