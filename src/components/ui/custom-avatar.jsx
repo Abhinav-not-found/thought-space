@@ -7,11 +7,9 @@ import {
 import LogoutBtn from "../btn/logout-btn"
 import ProfileBtn from "../btn/profile-btn"
 import SettingsBtn from "../btn/settings-btn"
-import MyThoughtBtn from "../btn/my-thought-btn"
 import { getUserInfo } from "@/helpers/user.helper"
 import FeedbackBtn from "../btn/feedback-btn"
 import ChangelogBtn from "../btn/changelog-btn"
-import { cookies } from "next/headers"
 import { getProfileInfoById } from "@/helpers/user-server/get-user-by-id"
 
 const CustomAvatar = async () => {
@@ -30,10 +28,7 @@ const CustomAvatar = async () => {
       <DropdownMenuContent>
         <div className='text-left'>
           <ProfileBtn />
-          <FeedbackBtn />
-          <ChangelogBtn />
-          {/* <MyThoughtBtn /> */}
-          {/* <SettingsBtn /> */}
+          <SettingsBtn />
           <LogoutBtn />
         </div>
       </DropdownMenuContent>

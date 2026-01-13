@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge"
 
 const Changelog = () => {
   return (
-    <main className='flex gap-10 w-full pt-4'>
+    <main className='flex gap-10 w-full'>
       <section className='w-3/4 '>
         <header className='mb-10'>
           <h1 className='text-4xl font-bold tracking-tight'>Changelog</h1>
