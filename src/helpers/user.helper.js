@@ -1,7 +1,6 @@
 import { connectDB } from "@/lib/db"
 import User from "@/models/user.model"
-import { cookies } from "next/headers"
-import jwt from 'jsonwebtoken'
+import { getUserId } from "./user-server/get-userId"
 
 export const getUserInfo = async (username) => {
   await connectDB()
@@ -10,15 +9,9 @@ export const getUserInfo = async (username) => {
     return User.findOne({ username }).lean()
   }
 
-  const cookieStore = await cookies()
-  const token = cookieStore.get("token")?.value
-  if (!token) return null
-
-  const { userId } = jwt.verify(token, process.env.JWT_SECRET)
+  const userId = await getUserId()
   return User.findById(userId).lean()
 }
-
-
 
 export const getAllUsers = async () => {
   await connectDB()
@@ -31,6 +24,5 @@ export const getAllUsers = async () => {
 
 export const getUserById = async (userId) => {
   await connectDB()
-
   return User.findById(userId).lean()
 }
