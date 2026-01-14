@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Spinner } from "@/components/ui/spinner"
 import { useRouter } from "next/navigation"
 import { toast } from "sonner"
-import { handleCreateBlog } from "@/helpers/blog.helper"
+import { handleCreateBlog } from "@/helpers/client/blog.client.helper"
 import Tiptap from "../general/Tiptap"
 
 const CreateBlogForm = () => {

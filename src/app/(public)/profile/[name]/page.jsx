@@ -1,7 +1,7 @@
 import BlogCard2 from "@/components/blog/blog-card2"
 import ProfileCard from "@/components/profile/profile-card"
-import { getUserBlogs } from "@/helpers/blog-server/get-user-blogs"
-import { getUserInfo } from "@/helpers/user.helper"
+import { getUserBlogs } from "@/helpers/server/blog/get-user-blogs"
+import { getUserInfo } from "@/helpers/server/user/get-user-info"
 
 const Profile = async ({ params }) => {
   const { name: username } = await params

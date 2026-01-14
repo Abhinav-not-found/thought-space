@@ -1,6 +1,6 @@
 import Heading, { Bold } from "../general/heading"
 import BlogCard2 from "../blog/blog-card2"
-import { getUserBlogs } from "@/helpers/blog-server/get-user-blogs"
+import { getUserBlogs } from "@/helpers/server/blog/get-user-blogs"
 
 // may be change this to a bento grid
 

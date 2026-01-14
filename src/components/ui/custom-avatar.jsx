@@ -7,22 +7,22 @@ import {
 import LogoutBtn from "../btn/logout-btn"
 import ProfileBtn from "../btn/profile-btn"
 import SettingsBtn from "../btn/settings-btn"
-import { getUserInfo } from "@/helpers/user.helper"
 import FeedbackBtn from "../btn/feedback-btn"
 import ChangelogBtn from "../btn/changelog-btn"
-import { getProfileInfoById } from "@/helpers/user-server/get-user-by-id"
+import { getUserInfo } from "@/helpers/server/user/get-user-info"
+import { getProfileAvatarById } from "@/helpers/server/user/get-profile-avatar-by-id"
 
 const CustomAvatar = async () => {
   const data = await getUserInfo()
-  const user = await getProfileInfoById()
+  const user = await getProfileAvatarById()
   if (!user) return null
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
         <Avatar>
-          <AvatarFallback>{data.name[0].toUpperCase()}</AvatarFallback>
           <AvatarImage src={user.avatar || undefined} />
+          <AvatarFallback>{data.name[0].toUpperCase()}</AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent>

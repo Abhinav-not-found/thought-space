@@ -1,4 +1,5 @@
 "use client"
+import { handleBio } from "@/helpers/client/user.client.helper"
 import { useState } from "react"
 import { toast } from "sonner"
 
@@ -8,26 +9,8 @@ const ProfileBio = ({ bio }) => {
   const [IsEditing, setIsEditing] = useState(false)
   const [bioValue, setBioValue] = useState(bio)
 
-  const handleBio = async () => {
-    try {
-      const res = await fetch("/api/user/edit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ bio: bioValue }),
-      })
-      const data = await res.json()
-      if (!res.ok) {
-        throw new Error(data.message || "Something went wrong")
-      }
-      toast.success(data.message)
-    } catch (error) {
-      console.log(error)
-    }
-  }
   return (
-    <div className="mt-2">
+    <div className='mt-2'>
       {IsEditing ? (
         <input
           className='text-sm font-medium mt-2 border-b border-gray-300 text-muted-foreground w-full'
@@ -36,7 +19,7 @@ const ProfileBio = ({ bio }) => {
           onKeyDown={(e) => {
             if (e.key === "Enter") {
               setIsEditing(false)
-              handleBio()
+              handleBio(bioValue, { toast })
             }
           }}
         />

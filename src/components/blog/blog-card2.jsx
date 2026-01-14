@@ -1,4 +1,4 @@
-import { getAuthorInfo } from "@/helpers/blog-server/get-author-info"
+import { getAuthorInfo } from "@/helpers/server/blog/get-author-info"
 import Link from "next/link"
 import CardSkeleton from "../skeleton/card-sk"
 
@@ -10,6 +10,7 @@ import EllipsisBtn from "../btn/ellipsis-btn"
 
 const BlogCard2 = async ({ data }) => {
   const author = await getAuthorInfo(data?.authorId.toString())
+
   const formattedDate = data?.createdAt
     ? new Date(data.createdAt).toLocaleDateString("en-US", {
         month: "short",

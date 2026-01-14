@@ -1,4 +1,4 @@
-import { getUserInfo } from "@/helpers/user.helper"
+import { getUserInfo } from "@/helpers/server/user/get-user-info"
 import { Button } from "../ui/button"
 import { User } from "lucide-react"
 import Link from "next/link"

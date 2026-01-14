@@ -1,4 +1,4 @@
-import { getUserInfo } from "@/helpers/user.helper"
+import { getUserInfo } from "@/helpers/client/user.client.helper"
 
 export async function generateMetadata({ params }) {
   const user = await getUserInfo(params.name)

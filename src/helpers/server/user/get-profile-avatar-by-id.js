@@ -2,7 +2,7 @@ import { connectDB } from "@/lib/db"
 import User from "@/models/user.model"
 import { getUserId } from "./get-userId"
 
-export const getProfileInfoById = async () => {
+export const getProfileAvatarById = async () => {
   await connectDB()
 
   const userId = await getUserId()

@@ -1,4 +1,4 @@
-import { getBlogBySlug } from "@/helpers/blog-server/get-blog-by-slug"
+import { getBlogBySlug } from "@/helpers/server/blog/get-blog-by-slug"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 

@@ -2,7 +2,7 @@
 import { useState } from "react"
 import { Button } from "../ui/button"
 import { Spinner } from "../ui/spinner"
-import { handleLogout } from "@/helpers/auth.helper"
+import { handleLogout } from "@/helpers/client/auth.client.helper"
 import { toast } from "sonner"
 import { useRouter } from "next/navigation"
 import { LogOut } from "lucide-react"
