@@ -3,6 +3,7 @@ import BlogCard2 from "../blog/blog-card2"
 import { getUserBlogs } from "@/helpers/blog-server/get-user-blogs"
 
 // may be change this to a bento grid
+
 const Trending = async () => {
   const blogs = await getUserBlogs("695e45c31839396f1d5ac19e")
 
