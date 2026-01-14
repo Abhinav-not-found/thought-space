@@ -26,7 +26,7 @@ const ProfileName = ({ name }) => {
   }
 
   return (
-    <div>
+    <div className="">
       {IsEditing ? (
         <input
           className='text-xl font-medium mt-2 first-letter:uppercase border-b border-gray-300 w-full'

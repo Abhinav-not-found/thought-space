@@ -2,7 +2,7 @@ import React from "react"
 
 const CardSkeleton = () => {
   return (
-    <div className='w-full h-2/3 bg-neutral-100 dark:bg-neutral-900 rounded-t-lg overflow-clip relative'>
+    <div className='w-full h-full bg-neutral-100 dark:bg-neutral-900 rounded-t-lg overflow-clip relative'>
       {/* top-left */}
       <div className='absolute top-4 left-6 w-12 h-12 bg-neutral-300/50 rounded-full blur-2xl' />
 

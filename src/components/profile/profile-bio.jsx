@@ -27,7 +27,7 @@ const ProfileBio = ({ bio }) => {
     }
   }
   return (
-    <div>
+    <div className="mt-2">
       {IsEditing ? (
         <input
           className='text-sm font-medium mt-2 border-b border-gray-300 text-muted-foreground w-full'

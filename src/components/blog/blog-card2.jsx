@@ -2,6 +2,8 @@ import { getAuthorInfo } from "@/helpers/blog-server/get-author-info"
 import Link from "next/link"
 import CardSkeleton from "../skeleton/card-sk"
 
+import EllipsisBtn from "../btn/ellipsis-btn"
+
 // change the skeleton so that the logo is in middle and it looks like footer(faded at the bottom)
 
 // change card skeleton name to card-image-skeleton
@@ -18,7 +20,14 @@ const BlogCard2 = async ({ data }) => {
 
   return (
     <div className='w-75 md:w-82 h-70 md:h-62 rounded-lg'>
-      <CardSkeleton />
+      <div className='w-full h-2/3 relative'>
+        <CardSkeleton />
+        {/* <EllipsisBtn
+          variant={"ghost"}
+          size={"sm"}
+          className={"absolute top-1 right-1"}
+        /> */}
+      </div>
       <div className='w-full h-1/3 p-2'>
         <div className='flex gap-2 mt-1 mb-1'>
           <Link
