@@ -1,5 +1,5 @@
 import { getGlobalFeed } from "@/helpers/server/blog/get-global-feed"
-import { getAllUsers } from "@/helpers/client/user.client.helper"
+import { getAllUsers } from "@/helpers/server/user/get-all-users"
 
 export default async function sitemap() {
   const blogs = await getGlobalFeed()
