@@ -1,4 +1,4 @@
-import { getGlobalFeed } from "@/helpers/blog-server/get-global-feed"
+import { getGlobalFeed } from "@/helpers/server/blog/get-global-feed"
 import { getAllUsers } from "@/helpers/client/user.client.helper"
 
 export default async function sitemap() {
