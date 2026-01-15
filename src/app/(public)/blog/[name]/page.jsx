@@ -1,4 +1,6 @@
+import { getAllBlogSlugs } from "@/helpers/server/blog/get-all-blog-slugs"
 import { getBlogBySlug } from "@/helpers/server/blog/get-blog-by-slug"
+import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 
@@ -11,9 +13,6 @@ const BlogDetail = async ({ params }) => {
   const data = await getBlogBySlug(name)
   if (!data) notFound()
 
-    console.log(data)
-
-  console.log(data)
   const formattedDate = data?.createdAt
     ? new Date(data.createdAt).toLocaleDateString("en-US", {
         month: "short",
@@ -24,7 +23,15 @@ const BlogDetail = async ({ params }) => {
 
   return (
     <main className='w-full h-full'>
-      <div className='bg-neutral-100 dark:bg-neutral-800 w-full h-40 md:h-90 rounded-md'></div>
+      <div className='bg-neutral-100 dark:bg-neutral-800 w-full h-40 md:h-90 rounded-md relative overflow-hidden'>
+        <Image
+          src={data.banner}
+          alt={data.title}
+          fill
+          priority
+          className='object-cover dark:brightness-90'
+        />
+      </div>
       <article className='mt-4 px-2 md:px-0 mb-20'>
         <h1 className='text-4xl md:text-5xl first-letter:uppercase font-semibold'>
           {data?.title}
@@ -48,3 +55,24 @@ const BlogDetail = async ({ params }) => {
 }
 
 export default BlogDetail
+
+export async function generateStaticParams() {
+  const blogs = await getAllBlogSlugs()
+
+  return blogs.map((blog) => ({
+    name: blog.slug,
+  }))
+}
+
+export async function generateMetadata({ params }) {
+  const blog = await getBlogBySlug(params.name)
+  if (!blog) return {}
+
+  return {
+    title: blog.title,
+    description: blog.excerpt,
+    openGraph: {
+      images: [blog.banner],
+    },
+  }
+}

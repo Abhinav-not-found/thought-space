@@ -3,6 +3,8 @@ import { handleGetProfileName } from "@/helpers/client/user.client.helper"
 import { useState } from "react"
 import { toast } from "sonner"
 
+// put a condition if(logged in user == profile user) {only then he should be able to click to edit profile }
+
 const ProfileName = ({ name }) => {
   const [IsEditing, setIsEditing] = useState(false)
   const [nameValue, setNameValue] = useState(name)

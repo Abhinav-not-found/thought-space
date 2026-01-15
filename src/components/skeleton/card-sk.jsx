@@ -1,6 +1,6 @@
 import React from "react"
 
-const CardSkeleton = () => {
+const CardImageSkeleton = () => {
   return (
     <div className='w-full h-full bg-neutral-100 dark:bg-neutral-900 rounded-t-lg overflow-clip relative'>
       {/* top-left */}
@@ -24,4 +24,4 @@ const CardSkeleton = () => {
   )
 }
 
-export default CardSkeleton
+export default CardImageSkeleton

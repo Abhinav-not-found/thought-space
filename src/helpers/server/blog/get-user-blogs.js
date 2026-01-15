@@ -5,6 +5,6 @@ import { cache } from "react"
 export const getUserBlogs = cache(async (userId) => {
   await connectDB()
 
-  const blogs = await Blog.find({ authorId: userId }).lean()
+  const blogs = await Blog.find({ authorId: userId }).lean().sort({createdAt:-1}).limit(6)
   return blogs
 })

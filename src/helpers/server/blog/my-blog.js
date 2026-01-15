@@ -7,6 +7,6 @@ export const getMyBlogs = async () => {
   await connectDB()
   const userId = getUserId()
 
-  const blogs = await Blog.find({ authorId: userId }).lean()
+  const blogs = await Blog.find({ authorId: userId }).lean().sort({createdAt:-1})
   return blogs
 }

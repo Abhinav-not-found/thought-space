@@ -27,7 +27,7 @@ const CustomAvatar = async () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <div className='text-left'>
-          {/* <ProfileBtn /> */}
+          <ProfileBtn />
           {/* <SettingsBtn /> */}
           <LogoutBtn />
         </div>
