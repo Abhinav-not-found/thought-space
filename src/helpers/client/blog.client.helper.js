@@ -1,17 +1,14 @@
 export const handleCreateBlog = async (
-  e,
-  form,
+  formdata,
   router,
   { setLoading, toast }
 ) => {
-  e.preventDefault()
   setLoading(true)
 
   try {
     const res = await fetch("/api/blog/create", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...form }),
+      body: formdata,
     })
     const data = await res.json()
     if (!res.ok) {

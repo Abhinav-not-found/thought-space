@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 
 import { Spinner } from "@/components/ui/spinner"
@@ -10,6 +10,10 @@ import Tiptap from "../general/Tiptap"
 
 const CreateBlogForm = () => {
   const router = useRouter()
+
+  const fileRef = useRef(null)
+  const [banner, setBanner] = useState(null)
+
   const [form, setForm] = useState({ title: "", content: "" })
   const [loading, setLoading] = useState(false)
   console.log(form)
@@ -24,7 +28,16 @@ const CreateBlogForm = () => {
 
   return (
     <form
-      onSubmit={(e) => handleCreateBlog(e, form, router, { setLoading, toast })}
+      onSubmit={(e) => {
+        e.preventDefault()
+        const formData = new FormData()
+        formData.append("title", form.title)
+        formData.append("content", form.content)
+        if (banner) {
+          formData.append("banner", banner)
+        }
+        handleCreateBlog(formData, router, { setLoading, toast })
+      }}
       className='space-y-4 mx-4 md:mx-0 '
     >
       <input
@@ -34,16 +47,31 @@ const CreateBlogForm = () => {
         placeholder='Title'
         className='w-full text-5xl font-semibold placeholder:text-neutral-300/80 dark:placeholder:text-neutral-600 outline-none'
       />
-      {/* <textarea
-        id='content'
-        value={form.content}
-        onChange={handleChange}
-        placeholder='Blog'
-        className='w-full h-80 outline-none mt-4'
-      /> */}
+      <div className='flex gap-2 items-center'>
+        <input
+          ref={fileRef}
+          id='banner'
+          type='file'
+          accept='image/*'
+          className='hidden'
+          onChange={(e) => setBanner(e.target.files?.[0] || null)}
+        />
+        <Button
+          type='button'
+          variant='outline'
+          onClick={() => fileRef.current?.click()}
+        >
+          Upload Banner
+        </Button>
+        {banner && (
+          <span className='text-sm text-neutral-500 truncate max-w-50'>
+            {banner.name}
+          </span>
+        )}
+      </div>
+
       <Tiptap content={form.content} onChange={handleContentChange} />
       <div className='flex gap-2'>
-        {/* <Button variant='outline'>Save as draft</Button> */}
         <Button type='submit' disabled={loading}>
           {loading ? <Spinner /> : "Post"}
         </Button>

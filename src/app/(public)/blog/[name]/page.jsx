@@ -11,6 +11,8 @@ const BlogDetail = async ({ params }) => {
   const data = await getBlogBySlug(name)
   if (!data) notFound()
 
+    console.log(data)
+
   console.log(data)
   const formattedDate = data?.createdAt
     ? new Date(data.createdAt).toLocaleDateString("en-US", {
