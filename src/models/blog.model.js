@@ -28,6 +28,10 @@ const blogSchema = new mongoose.Schema(
       required: true,
       minlength: [10, "Content too short"],
       maxlength: [50000, "Content too long"],
+    },
+    banner: {
+      type: String,
+      default: ''
     }
   },
   { timestamps: true }

@@ -36,12 +36,12 @@ const userSchema = new mongoose.Schema(
     avatar: {
       type: String,
       default: '',
-      maxlength: [160, "Bio must be at most 160 characters"],
-      trim: true,
     },
     bio: {
       type: String,
-      default: 'Bio is empty'
+      default: 'Bio is empty',
+      maxlength: [160, "Bio must be at most 160 characters"],
+      trim: true,
     },
     isBanned: {
       type: Boolean,
