@@ -3,6 +3,9 @@ import ProfileCard from "@/components/profile/profile-card"
 import { getUserBlogs } from "@/helpers/server/blog/get-user-blogs"
 import { getUserInfo } from "@/helpers/server/user/get-user-info"
 
+// put a condition if(logged in user == profile user) {only then he should be able to click to edit profile } other wise its just text
+// put same condition on image, name & bio.
+
 const Profile = async ({ params }) => {
   const { name: username } = await params
 

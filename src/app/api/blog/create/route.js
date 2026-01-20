@@ -56,7 +56,7 @@ export async function POST(req) {
       const buffer = Buffer.from(bytes)
 
       const upload = await imagekit.upload({
-        file: buffer,
+        file: buffer, 
         fileName: `blog-banner-${Date.now()}`,
         folder: "/Thought_Space/Blog_Banners",
       })
